@@ -20,141 +20,165 @@
     }
 
     body {
-      background: #09060a;
-      color: #fff;
+      background: #080508;
+      color: white;
       font-family: 'Cormorant Garamond', serif;
       overflow-x: hidden;
     }
 
-    /* =========================
-       FONDO PRINCIPAL
-    ========================= */
+    /* =====================================
+       PORTADA
+    ===================================== */
 
     .hero {
       min-height: 100svh;
       position: relative;
+      overflow: hidden;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
 
       background:
-        radial-gradient(circle at 50% 25%, rgba(255, 116, 145, .22), transparent 28%),
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(255, 120, 155, .25),
+          transparent 30%
+        ),
         linear-gradient(
           to bottom,
-          #321527 0%,
-          #54233c 27%,
-          #1d1220 58%,
-          #080609 100%
+          #351629,
+          #5a2941 35%,
+          #1d111e 70%,
+          #080508
         );
     }
 
-    /* Ventana */
-
     .window {
       position: absolute;
-      width: min(760px, 88vw);
-      height: min(570px, 65vh);
+
+      width: min(760px, 90vw);
+      height: min(570px, 62vh);
+
       top: 7%;
       left: 50%;
+
       transform: translateX(-50%);
 
-      border: 9px solid rgba(32, 19, 25, .95);
-      box-shadow:
-        0 0 0 3px rgba(255, 205, 220, .08),
-        0 20px 70px rgba(0,0,0,.65);
+      border: 9px solid #1b1117;
 
       background:
-        radial-gradient(circle at 65% 22%, rgba(255,220,225,.8) 0 3px, transparent 4px),
-        radial-gradient(circle at 25% 32%, rgba(255,220,225,.6) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 44%, rgba(255,220,225,.7) 0 2px, transparent 3px),
+        radial-gradient(
+          circle at 70% 20%,
+          rgba(255,240,220,.9) 0 3px,
+          transparent 4px
+        ),
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(255,230,220,.7) 0 2px,
+          transparent 3px
+        ),
+        radial-gradient(
+          circle at 82% 42%,
+          rgba(255,240,220,.8) 0 2px,
+          transparent 3px
+        ),
         linear-gradient(
           to bottom,
-          #542b4b 0%,
-          #c65a75 45%,
-          #f18a83 63%,
-          #392036 100%
+          #492541,
+          #b7526c 45%,
+          #e88180 65%,
+          #211421
         );
 
-      opacity: .95;
+      box-shadow:
+        0 20px 70px rgba(0,0,0,.7);
     }
 
     .window::before {
       content: "";
+
       position: absolute;
-      left: 50%;
       top: 0;
+      left: 50%;
+
       width: 7px;
       height: 100%;
-      background: rgba(26,15,21,.9);
+
+      background: #1b1117;
+
       transform: translateX(-50%);
     }
 
     .window::after {
       content: "";
+
       position: absolute;
-      left: 0;
       top: 48%;
+      left: 0;
+
       width: 100%;
       height: 7px;
-      background: rgba(26,15,21,.9);
-    }
 
-    /* Luna */
+      background: #1b1117;
+    }
 
     .moon {
       position: absolute;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
+
+      width: 65px;
+      height: 65px;
+
       top: 13%;
       right: 15%;
 
-      background: #fff0df;
-      box-shadow:
-        0 0 25px rgba(255,235,210,.6),
-        0 0 60px rgba(255,200,200,.25);
-    }
+      border-radius: 50%;
 
-    /* Ciudad */
+      background: #fff0dc;
+
+      box-shadow:
+        0 0 25px rgba(255,230,210,.7),
+        0 0 60px rgba(255,180,190,.25);
+    }
 
     .city {
       position: absolute;
+
       bottom: 0;
       left: 0;
+
       width: 100%;
-      height: 34%;
+      height: 35%;
+
       background:
         linear-gradient(
           to top,
-          #100b12 0%,
-          #1b101b 75%,
-          transparent 100%
+          #0c080d 0%,
+          #160d17 75%,
+          transparent
         );
     }
 
     .city::before {
       content: "";
+
       position: absolute;
+
       bottom: 0;
       left: 0;
+
       width: 100%;
       height: 85%;
 
-      background:
-        linear-gradient(to top, #100a11 0 70%, transparent 70%),
-        repeating-linear-gradient(
-          90deg,
-          #100a11 0 34px,
-          transparent 34px 45px
-        );
+      background: #0d090e;
+
       clip-path: polygon(
-        0 45%,
-        5% 45%,
+        0 50%,
+        5% 50%,
         5% 25%,
         10% 25%,
-        10% 50%,
-        16% 50%,
+        10% 48%,
+        16% 48%,
         16% 15%,
         21% 15%,
         21% 40%,
@@ -186,49 +210,59 @@
       );
     }
 
-    /* =========================
-       CONTENIDO HERO
-    ========================= */
-
     .hero-content {
       position: relative;
       z-index: 5;
+
       width: min(900px, 92%);
+
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 30px;
+
+      padding: 30px 18px;
+
+      margin-top: 70px;
     }
 
     .small-title {
-      font-size: clamp(15px, 3vw, 22px);
-      letter-spacing: 4px;
+      font-size: clamp(14px, 3vw, 21px);
+
+      letter-spacing: 3px;
+
       text-transform: uppercase;
-      color: #ffd5df;
-      margin-bottom: 12px;
-      opacity: .9;
+
+      color: #ffd7e2;
+
+      margin-bottom: 15px;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(52px, 10vw, 105px);
+
+      font-size: clamp(55px, 10vw, 105px);
+
       font-weight: 400;
+
       line-height: 1.05;
-      color: #fff2f6;
+
+      color: #fff1f5;
 
       text-shadow:
-        0 0 10px rgba(255,150,180,.35),
+        0 0 12px rgba(255,150,180,.35),
         0 0 35px rgba(255,100,150,.2);
 
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .hero-heart {
-      font-size: clamp(28px, 6vw, 48px);
-      animation: heartbeat 1.8s infinite;
+      font-size: 42px;
+
       display: inline-block;
+
+      animation: heartbeat 1.8s infinite;
     }
 
     @keyframes heartbeat {
+
       0%, 100% {
         transform: scale(1);
       }
@@ -248,26 +282,40 @@
 
     .hero-subtitle {
       max-width: 650px;
-      margin: 0 auto;
-      font-size: clamp(18px, 3vw, 26px);
+
+      margin: 10px auto 0;
+
+      color: #f5dce4;
+
+      font-size: clamp(18px, 3vw, 25px);
+
       line-height: 1.5;
-      color: #f8dce4;
     }
 
     .scroll-down {
-      margin-top: 35px;
       display: inline-flex;
+
       flex-direction: column;
+
       align-items: center;
+
       gap: 7px;
-      color: #f8cad6;
+
+      margin-top: 30px;
+
+      color: #f5cbd7;
+
       text-decoration: none;
-      font-size: 15px;
+
       letter-spacing: 2px;
+
+      font-size: 15px;
+
       animation: floating 2s infinite ease-in-out;
     }
 
     @keyframes floating {
+
       0%, 100% {
         transform: translateY(0);
       }
@@ -277,156 +325,188 @@
       }
     }
 
-    /* =========================
-       NAVEGACIÓN
-    ========================= */
+
+    /* =====================================
+       MENÚ
+    ===================================== */
 
     .nav {
       position: sticky;
+
       top: 0;
+
       z-index: 50;
 
-      background: rgba(10,6,11,.88);
+      background: rgba(9,5,10,.9);
+
       backdrop-filter: blur(15px);
 
       border-bottom: 1px solid rgba(255,180,200,.12);
 
-      padding: 14px 10px;
+      padding: 12px 8px;
     }
 
     .nav-container {
       max-width: 900px;
+
       margin: auto;
 
       display: flex;
+
       justify-content: center;
-      gap: 8px;
+
       flex-wrap: wrap;
+
+      gap: 5px;
     }
 
     .nav a {
-      color: #f9dce5;
+      color: #f5dce5;
+
       text-decoration: none;
 
-      padding: 8px 13px;
+      padding: 8px 12px;
 
       border-radius: 20px;
 
-      font-size: 16px;
+      font-size: 15px;
 
-      transition: .3s ease;
+      transition: .3s;
     }
 
-    .nav a:hover,
-    .nav a:active {
-      background: rgba(255,110,150,.15);
-      color: #fff;
+    .nav a:hover {
+      background: rgba(255,100,150,.15);
     }
 
-    /* =========================
-       SECCIONES
-    ========================= */
 
-    section {
-      padding: 80px 18px;
-      position: relative;
+    /* =====================================
+       SECCIÓN PEQUEÑO DETALLE
+    ===================================== */
+
+    .detail-section {
+      padding: 70px 16px;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(255,90,140,.12),
+          transparent 30%
+        ),
+        #0a060b;
     }
 
     .section-container {
       width: min(1000px, 100%);
+
       margin: auto;
     }
 
     .section-title {
       text-align: center;
+
       font-family: 'Great Vibes', cursive;
-      font-size: clamp(42px, 8vw, 70px);
+
+      font-size: clamp(43px, 8vw, 70px);
+
       font-weight: 400;
+
       color: #ffdce6;
-      margin-bottom: 18px;
+
+      margin-bottom: 20px;
     }
 
     .section-description {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 45px;
-      color: #d9bbc6;
+
+      color: #d7bac5;
+
       font-size: clamp(17px, 3vw, 21px);
+
       line-height: 1.6;
-    }
 
-    /* =========================
-       DETALLE
-    ========================= */
+      max-width: 700px;
 
-    .detail-section {
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,100,150,.12), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(150,70,120,.1), transparent 35%),
-        #0b070c;
+      margin: auto;
     }
 
     .detail-card {
       max-width: 850px;
-      margin: auto;
 
-      padding: clamp(25px, 5vw, 55px);
+      margin: 35px auto 0;
 
-      border: 1px solid rgba(255,180,200,.2);
+      padding: clamp(25px, 5vw, 50px);
+
       border-radius: 28px;
 
-      background: rgba(30,16,27,.75);
+      border: 1px solid rgba(255,180,200,.17);
+
+      background: rgba(30,15,27,.75);
 
       box-shadow:
-        0 25px 80px rgba(0,0,0,.45),
-        inset 0 1px rgba(255,255,255,.05);
+        0 25px 70px rgba(0,0,0,.45);
     }
 
     .detail-card::before {
       content: "❤";
+
       display: block;
+
       text-align: center;
-      color: #ef7395;
+
+      color: #e96c91;
+
       font-size: 30px;
-      margin-bottom: 20px;
+
+      margin-bottom: 18px;
     }
 
     .detail-text {
       text-align: center;
-      color: #f5dfe6;
-      font-size: clamp(19px, 3.5vw, 25px);
+
+      color: #f4dce4;
+
+      font-size: clamp(18px, 3.5vw, 24px);
+
       line-height: 1.75;
     }
 
-    /* =========================
-       CARTAS / TARJETAS
-    ========================= */
+
+    /* =====================================
+       TARJETAS
+    ===================================== */
 
     .letters-section {
+      padding: 70px 16px 90px;
+
       background:
         linear-gradient(
           180deg,
-          #0b070c 0%,
-          #110a10 100%
+          #0a060b,
+          #100910
         );
     }
 
     .cards {
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+
+      gap: 22px;
+
+      margin-top: 45px;
     }
 
     .card {
-      position: relative;
       overflow: hidden;
 
-      background: #160d14;
+      background: #160b13;
 
       border: 1px solid rgba(255,180,200,.15);
-      border-radius: 24px;
 
-      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+      border-radius: 23px;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.45);
 
       transition:
         transform .35s ease,
@@ -434,192 +514,122 @@
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-7px);
+
       box-shadow:
         0 25px 60px rgba(0,0,0,.55),
         0 0 30px rgba(255,100,150,.08);
     }
 
     .card-image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
       display: block;
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
     }
 
     .card-content {
-      padding: 24px 20px 25px;
+      padding: 18px 15px 22px;
+
       text-align: center;
     }
 
     .card h3 {
       font-family: 'Great Vibes', cursive;
+
+      font-size: 33px;
+
       font-weight: 400;
-      font-size: 35px;
-      color: #ffd7e2;
-      margin-bottom: 15px;
+
+      color: #ffd8e3;
+
+      margin-bottom: 13px;
     }
 
     .card-button {
       border: none;
-      background: rgba(226,78,117,.15);
-      color: #ffdce6;
 
-      padding: 11px 20px;
+      background: rgba(220,75,115,.18);
+
+      color: #ffdde6;
+
+      padding: 10px 18px;
 
       border-radius: 30px;
 
       font-family: inherit;
-      font-size: 17px;
+
+      font-size: 16px;
 
       cursor: pointer;
 
-      transition: .3s ease;
+      transition: .3s;
     }
 
     .card-button:hover,
     .card-button:active {
-      background: rgba(226,78,117,.3);
+      background: rgba(220,75,115,.32);
+
       transform: scale(1.04);
     }
 
-    /* =========================
-       PROMESA
-    ========================= */
 
-    .promise-section {
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(100,30,65,.25),
-          transparent 60%
-        ),
-        #090609;
-    }
-
-    .promise-box {
-      max-width: 800px;
-      margin: auto;
-
-      text-align: center;
-
-      padding: clamp(30px, 6vw, 60px);
-
-      border-radius: 30px;
-
-      border: 1px solid rgba(255,180,200,.17);
-
-      background: linear-gradient(
-        145deg,
-        rgba(48,22,37,.75),
-        rgba(20,10,18,.85)
-      );
-
-      box-shadow: 0 30px 80px rgba(0,0,0,.5);
-    }
-
-    .promise-symbol {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .promise-text {
-      color: #f4dbe3;
-      font-size: clamp(19px, 3.5vw, 25px);
-      line-height: 1.75;
-    }
-
-    /* =========================
-       ÚLTIMA SORPRESA
-    ========================= */
-
-    .surprise-section {
-      background:
-        radial-gradient(
-          circle at 50% 0%,
-          rgba(232,74,119,.13),
-          transparent 45%
-        ),
-        #080508;
-    }
-
-    .surprise-box {
-      max-width: 820px;
-      margin: auto;
-      text-align: center;
-      padding: clamp(30px, 6vw, 65px);
-
-      border-radius: 32px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(40,18,31,.9),
-          rgba(16,8,14,.95)
-        );
-
-      border: 1px solid rgba(255,170,195,.2);
-
-      box-shadow: 0 30px 90px rgba(0,0,0,.55);
-    }
-
-    .surprise-heart {
-      font-size: 55px;
-      margin-bottom: 20px;
-      animation: heartbeat 1.8s infinite;
-      display: inline-block;
-    }
-
-    .surprise-text {
-      color: #f5dce5;
-      font-size: clamp(19px, 3.5vw, 25px);
-      line-height: 1.8;
-    }
-
-    /* =========================
-       PIE DE PÁGINA
-    ========================= */
+    /* =====================================
+       FOOTER
+    ===================================== */
 
     footer {
       text-align: center;
-      padding: 45px 20px 55px;
+
+      padding: 35px 20px 50px;
+
       background: #050305;
+
       color: #9d7e8a;
+
       font-size: 16px;
     }
 
     footer strong {
       color: #eeb4c5;
-      font-weight: 500;
     }
 
-    /* =========================
-       MODAL / CARTA
-    ========================= */
+
+    /* =====================================
+       MODAL DEL SOBRE
+    ===================================== */
 
     .modal {
       position: fixed;
+
       inset: 0;
 
       z-index: 100;
 
       display: none;
+
       align-items: center;
+
       justify-content: center;
 
-      padding: 20px;
+      padding: 18px;
 
-      background: rgba(4,2,5,.88);
+      background: rgba(3,2,4,.9);
 
       backdrop-filter: blur(12px);
     }
 
     .modal.active {
       display: flex;
+
       animation: fadeIn .35s ease;
     }
 
     @keyframes fadeIn {
+
       from {
         opacity: 0;
       }
@@ -629,8 +639,35 @@
       }
     }
 
+    .close-modal {
+      position: fixed;
+
+      top: 18px;
+
+      right: 18px;
+
+      z-index: 200;
+
+      width: 42px;
+
+      height: 42px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,.1);
+
+      color: white;
+
+      font-size: 25px;
+
+      cursor: pointer;
+    }
+
     .envelope-wrapper {
       width: min(500px, 94vw);
+
       perspective: 1200px;
     }
 
@@ -638,23 +675,23 @@
       position: relative;
 
       width: 100%;
-      height: 330px;
 
-      transform-style: preserve-3d;
-
-      background: #6e243e;
+      height: 315px;
 
       border-radius: 8px;
 
+      background: #5d1e37;
+
       box-shadow:
-        0 35px 90px rgba(0,0,0,.65),
+        0 35px 90px rgba(0,0,0,.7),
         0 0 40px rgba(230,80,125,.12);
 
-      transition: height .7s ease;
+      transform-style: preserve-3d;
     }
 
     .envelope-front {
       position: absolute;
+
       inset: 0;
 
       z-index: 4;
@@ -662,8 +699,8 @@
       background:
         linear-gradient(
           145deg,
-          #7e2948,
-          #541a32
+          #792846,
+          #4f172f
         );
 
       clip-path: polygon(
@@ -678,15 +715,15 @@
     .envelope-flap {
       position: absolute;
 
-      left: 0;
       top: 0;
+      left: 0;
 
       width: 100%;
       height: 58%;
 
       z-index: 6;
 
-      background: #8f3151;
+      background: #8c3050;
 
       clip-path: polygon(
         0 0,
@@ -705,111 +742,107 @@
       position: absolute;
 
       left: 5%;
+
       width: 90%;
 
-      bottom: 8%;
+      bottom: 7%;
+
+      z-index: 3;
 
       min-height: 245px;
 
-      z-index: 3;
+      max-height: 67vh;
+
+      overflow-y: auto;
+
+      padding: 25px 22px;
+
+      border-radius: 5px;
 
       background:
         linear-gradient(
           135deg,
-          #fff9f5,
-          #f7e7df
+          #fffaf6,
+          #f6e7df
         );
 
-      color: #4b2633;
+      color: #48232f;
 
-      padding: 28px 25px;
-
-      border-radius: 4px;
-
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      box-shadow:
+        0 8px 25px rgba(0,0,0,.3);
 
       transform: translateY(0);
 
       transition:
         transform 1s ease,
         z-index 0s linear .5s;
-
-      overflow-y: auto;
-      max-height: 65vh;
     }
 
     .envelope-letter h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 38px;
+
+      font-size: 37px;
+
       font-weight: 400;
+
       text-align: center;
-      color: #8a2949;
+
+      color: #872847;
+
       margin-bottom: 15px;
     }
 
     .envelope-letter p {
-      font-family: 'Cormorant Garamond', serif;
       font-size: 19px;
+
       line-height: 1.65;
+
       text-align: left;
     }
 
     .envelope.open .envelope-flap {
       transform: rotateX(180deg);
+
       z-index: 1;
     }
 
     .envelope.open .envelope-letter {
       transform: translateY(-135px);
+
       z-index: 7;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 18px;
-
-      width: 40px;
-      height: 40px;
-
-      border: none;
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.1);
-      color: white;
-
-      font-size: 24px;
-
-      cursor: pointer;
-
-      z-index: 20;
     }
 
     .open-message {
       text-align: center;
-      color: #f7d7e0;
-      margin-top: 25px;
-      font-size: 17px;
-      opacity: .85;
+
+      color: #f4d5df;
+
+      margin-top: 22px;
+
+      font-size: 16px;
     }
 
-    /* =========================
+
+    /* =====================================
        PÉTALOS
-    ========================= */
+    ===================================== */
 
     .petal {
       position: fixed;
+
       top: -30px;
+
       z-index: 2;
 
       width: 9px;
+
       height: 13px;
 
       border-radius: 70% 30% 70% 30%;
 
-      background: #d95175;
+      background: #d95075;
 
-      opacity: .7;
+      opacity: .55;
 
       pointer-events: none;
 
@@ -817,78 +850,71 @@
     }
 
     @keyframes falling {
-      0% {
-        transform: translateY(-30px) rotate(0deg);
+
+      from {
+        transform:
+          translateY(-30px)
+          rotate(0deg);
       }
 
-      100% {
-        transform: translateY(110vh) rotate(720deg);
+      to {
+        transform:
+          translateY(110vh)
+          rotate(720deg);
       }
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+
+    /* =====================================
+       MÓVIL
+    ===================================== */
 
     @media (max-width: 800px) {
 
       .window {
         width: 94vw;
+
         height: 52vh;
-        top: 7%;
       }
 
       .moon {
         width: 48px;
         height: 48px;
+
         right: 10%;
       }
 
       .hero-content {
-        margin-top: 100px;
-        padding: 25px 15px;
+        margin-top: 90px;
       }
 
       .cards {
         grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: auto;
-        gap: 25px;
-      }
 
-      .card {
-        width: 100%;
+        max-width: 480px;
+
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .card-image {
         aspect-ratio: 16 / 10;
       }
 
-      .nav {
-        padding: 10px 7px;
-      }
-
-      .nav-container {
-        gap: 3px;
-      }
-
       .nav a {
         font-size: 14px;
-        padding: 7px 9px;
+
+        padding:
+          7px 9px;
       }
 
       section {
-        padding: 65px 15px;
-      }
-
-      .detail-card,
-      .promise-box,
-      .surprise-box {
-        border-radius: 22px;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .envelope {
-        height: 310px;
+        height: 300px;
       }
 
       .envelope.open .envelope-letter {
@@ -896,15 +922,17 @@
       }
     }
 
+
     @media (max-width: 430px) {
 
       h1 {
-        font-size: 52px;
+        font-size: 53px;
       }
 
       .small-title {
-        letter-spacing: 2px;
         font-size: 13px;
+
+        letter-spacing: 2px;
       }
 
       .hero-subtitle {
@@ -915,10 +943,13 @@
         height: 47vh;
       }
 
-      .detail-text,
-      .promise-text,
-      .surprise-text {
+      .detail-card {
+        padding: 25px 20px;
+      }
+
+      .detail-text {
         font-size: 19px;
+
         line-height: 1.65;
       }
 
@@ -927,11 +958,11 @@
       }
 
       .envelope {
-        height: 290px;
+        height: 285px;
       }
 
       .envelope-letter {
-        padding: 23px 20px;
+        padding: 22px 18px;
       }
 
       .envelope-letter h3 {
@@ -946,19 +977,24 @@
         transform: translateY(-105px);
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
-       HERO
-  ========================= -->
+
+  <!-- =====================================
+       PORTADA
+  ===================================== -->
 
   <header class="hero" id="inicio">
 
     <div class="window"></div>
+
     <div class="moon"></div>
+
     <div class="city"></div>
 
     <div class="hero-content">
@@ -981,18 +1017,22 @@
         pero hecho con todo mi corazón.
       </p>
 
-      <a href="#detalle" class="scroll-down">
+      <a
+        href="#detalle"
+        class="scroll-down"
+      >
         Descubre tu sorpresa
         <span>↓</span>
       </a>
 
     </div>
+
   </header>
 
 
-  <!-- =========================
-       NAVEGACIÓN
-  ========================= -->
+  <!-- =====================================
+       MENÚ
+  ===================================== -->
 
   <nav class="nav">
 
@@ -1006,11 +1046,11 @@
         Lo que amo de ti
       </a>
 
-      <a href="#promesa">
+      <a href="#amor">
         Una promesa
       </a>
 
-      <a href="#sorpresa">
+      <a href="#amor">
         Una última sorpresa
       </a>
 
@@ -1019,11 +1059,14 @@
   </nav>
 
 
-  <!-- =========================
+  <!-- =====================================
        PEQUEÑO DETALLE
-  ========================= -->
+  ===================================== -->
 
-  <section class="detail-section" id="detalle">
+  <section
+    class="detail-section"
+    id="detalle"
+  >
 
     <div class="section-container">
 
@@ -1038,7 +1081,9 @@
       <div class="detail-card">
 
         <p class="detail-text">
+
           No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz , hoy como es tu cumpleaños espero que la pases bonito amor mío , TE AMO 🖤❤️
+
         </p>
 
       </div>
@@ -1048,11 +1093,14 @@
   </section>
 
 
-  <!-- =========================
-       CARTAS
-  ========================= -->
+  <!-- =====================================
+       LAS TRES CARTAS
+  ===================================== -->
 
-  <section class="letters-section" id="amor">
+  <section
+    class="letters-section"
+    id="amor"
+  >
 
     <div class="section-container">
 
@@ -1061,13 +1109,16 @@
       </h2>
 
       <p class="section-description">
-        Hay cosas que quiero decirte y que merecen ser guardadas para siempre.
+        Abre cada una cuando quieras descubrir lo que tengo guardado para ti amorcito🖤❤️
       </p>
 
 
       <div class="cards">
 
-        <!-- CARTA 1 -->
+
+        <!-- =================================
+             CARTA 1
+        ================================= -->
 
         <article class="card">
 
@@ -1095,7 +1146,9 @@
         </article>
 
 
-        <!-- CARTA 2 -->
+        <!-- =================================
+             CARTA 2
+        ================================= -->
 
         <article class="card">
 
@@ -1123,7 +1176,9 @@
         </article>
 
 
-        <!-- CARTA 3 -->
+        <!-- =================================
+             CARTA 3
+        ================================= -->
 
         <article class="card">
 
@@ -1150,34 +1205,6 @@
 
         </article>
 
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PROMESA
-  ========================= -->
-
-  <section class="promise-section" id="promesa">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        Una promesa
-      </h2>
-
-      <div class="promise-box">
-
-        <div class="promise-symbol">
-          💍
-        </div>
-
-        <p class="promise-text">
-          Prometo siempre quedarme a tu lado nunca más me volveré a alejar de ti , si me lo permites siempre estaré para ti amor SIEMPRE , porque te amo con todo mi corazón como no tienes idea , prometo que si todo sale bien , llegará el día que en verdad nos podamos conocer en persona , Te amo jolly 🖤❤️
-        </p>
 
       </div>
 
@@ -1186,40 +1213,9 @@
   </section>
 
 
-  <!-- =========================
-       ÚLTIMA SORPRESA
-  ========================= -->
-
-  <section class="surprise-section" id="sorpresa">
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        Una última sorpresa
-      </h2>
-
-      <div class="surprise-box">
-
-        <div class="surprise-heart">
-          ❤️
-        </div>
-
-        <p class="surprise-text">
-          Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.
-          <br><br>
-          Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña página y recuerda que lo ise pensando en ti y solamente para ti jolly 🖤❤️
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- =====================================
+       PIE DE PÁGINA
+  ===================================== -->
 
   <footer>
 
@@ -1230,9 +1226,9 @@
   </footer>
 
 
-  <!-- =========================
-       MODAL DE CARTA
-  ========================= -->
+  <!-- =====================================
+       VENTANA DE LAS CARTAS
+  ===================================== -->
 
   <div
     class="modal"
@@ -1251,7 +1247,10 @@
 
     <div class="envelope-wrapper">
 
-      <div class="envelope" id="envelope">
+      <div
+        class="envelope"
+        id="envelope"
+      >
 
         <div class="envelope-letter">
 
@@ -1264,11 +1263,13 @@
 
         </div>
 
+
         <div class="envelope-flap"></div>
 
         <div class="envelope-front"></div>
 
       </div>
+
 
       <div class="open-message">
         Una pequeña carta hecha especialmente para ti ❤️
@@ -1279,69 +1280,114 @@
   </div>
 
 
-  <!-- =========================
+  <!-- =====================================
        JAVASCRIPT
-  ========================= -->
+  ===================================== -->
 
   <script>
+
+
+    /* =====================================
+       TEXTOS DE LAS CARTAS
+    ===================================== */
 
     const letters = {
 
       love: {
+
         title: "Lo que amo de ti",
+
         text: `Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por esto te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
+
       },
+
 
       promise: {
+
         title: "Una promesa",
+
         text: `Prometo siempre quedarme a tu lado nunca más me volveré a alejar de ti , si me lo permites siempre estaré para ti amor SIEMPRE , porque te amo con todo mi corazón como no tienes idea , prometo que si todo sale bien , llegará el día que en verdad nos podamos conocer en persona , Te amo jolly 🖤❤️`
+
       },
 
+
       surprise: {
+
         title: "Una última sorpresa",
+
         text: `Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.
 
 Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña página y recuerda que lo ise pensando en ti y solamente para ti jolly 🖤❤️`
+
       }
 
     };
 
 
+    /* =====================================
+       ABRIR CARTA
+    ===================================== */
+
     function openLetter(type) {
 
-      const modal = document.getElementById("letterModal");
-      const envelope = document.getElementById("envelope");
+      const modal =
+        document.getElementById("letterModal");
 
-      const title = document.getElementById("letterTitle");
-      const text = document.getElementById("letterText");
+      const envelope =
+        document.getElementById("envelope");
 
-      title.textContent = letters[type].title;
+      const title =
+        document.getElementById("letterTitle");
 
-      text.innerHTML = letters[type].text.replace(/\n/g, "<br><br>");
+      const text =
+        document.getElementById("letterText");
+
+
+      title.textContent =
+        letters[type].title;
+
+
+      text.innerHTML =
+        letters[type].text.replace(
+          /\n/g,
+          "<br><br>"
+        );
+
 
       modal.classList.add("active");
 
+
       envelope.classList.remove("open");
 
-      document.body.style.overflow = "hidden";
 
-      /*
-        Esperamos un momento para que primero
-        aparezca el sobre y después se abra.
-      */
+      document.body.style.overflow =
+        "hidden";
+
 
       setTimeout(() => {
+
         envelope.classList.add("open");
+
       }, 500);
+
     }
 
 
+    /* =====================================
+       CERRAR CARTA
+    ===================================== */
+
     function closeLetter() {
 
-      const modal = document.getElementById("letterModal");
-      const envelope = document.getElementById("envelope");
+      const modal =
+        document.getElementById("letterModal");
+
+      const envelope =
+        document.getElementById("envelope");
+
 
       envelope.classList.remove("open");
+
 
       setTimeout(() => {
 
@@ -1350,54 +1396,82 @@ Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña
         document.body.style.overflow = "";
 
       }, 500);
+
     }
 
+
+    /* =====================================
+       CERRAR TOCANDO FUERA
+    ===================================== */
 
     function closeOutside(event) {
 
-      if (event.target.id === "letterModal") {
+      if (
+        event.target.id ===
+        "letterModal"
+      ) {
+
         closeLetter();
+
       }
 
     }
 
 
-    /* ESC para cerrar */
+    /* =====================================
+       TECLA ESC
+    ===================================== */
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-      if (event.key === "Escape") {
-        closeLetter();
+        if (event.key === "Escape") {
+
+          closeLetter();
+
+        }
+
       }
+    );
 
-    });
 
-
-    /* =========================
+    /* =====================================
        PÉTALOS
-    ========================= */
+    ===================================== */
 
     function createPetal() {
 
-      const petal = document.createElement("div");
+      const petal =
+        document.createElement("div");
 
-      petal.className = "petal";
 
-      petal.style.left = Math.random() * 100 + "vw";
+      petal.className =
+        "petal";
+
+
+      petal.style.left =
+        Math.random() * 100 + "vw";
+
 
       petal.style.animationDuration =
         (6 + Math.random() * 7) + "s";
 
+
       petal.style.animationDelay =
         Math.random() * 4 + "s";
+
 
       petal.style.transform =
         `rotate(${Math.random() * 360}deg)`;
 
+
       petal.style.opacity =
         .25 + Math.random() * .5;
 
+
       document.body.appendChild(petal);
+
 
       setTimeout(() => {
 
@@ -1408,63 +1482,25 @@ Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña
     }
 
 
-    /*
-      En celulares usamos menos pétalos
-      para que todo funcione suavemente.
-    */
-
     const petalAmount =
-      window.innerWidth < 600 ? 10 : 18;
+      window.innerWidth < 600
+        ? 8
+        : 16;
 
-    for (let i = 0; i < petalAmount; i++) {
 
-      setTimeout(createPetal, i * 500);
+    for (
+      let i = 0;
+      i < petalAmount;
+      i++
+    ) {
+
+      setTimeout(
+        createPetal,
+        i * 500
+      );
 
     }
 
-
-    /* =========================
-       ANIMACIÓN AL APARECER
-    ========================= */
-
-    const observer =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.style.opacity = "1";
-              entry.target.style.transform =
-                "translateY(0)";
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-
-    document
-      .querySelectorAll(".card, .detail-card, .promise-box, .surprise-box")
-      .forEach(element => {
-
-        element.style.opacity = "0";
-
-        element.style.transform =
-          "translateY(25px)";
-
-        element.style.transition =
-          "opacity .8s ease, transform .8s ease";
-
-        observer.observe(element);
-
-      });
 
   </script>
 
