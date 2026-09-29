@@ -1,1508 +1,1106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Feliz cumpleaños Mi Princesa Jolly ❤️</title>
+<title>Feliz cumpleaños Mi Princesa Jolly</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    body {
-      background: #080508;
-      color: white;
-      font-family: 'Cormorant Garamond', serif;
-      overflow-x: hidden;
-    }
+body{
+    background:#09050a;
+    color:white;
+    font-family:'Playfair Display',serif;
+    overflow-x:hidden;
+}
 
-    /* =====================================
-       PORTADA
-    ===================================== */
+/* =========================
+   FONDO
+========================= */
 
-    .hero {
-      min-height: 100svh;
-      position: relative;
-      overflow: hidden;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(160,55,100,.18), transparent 40%),
+        linear-gradient(to bottom,#120812,#09050a 60%,#050305);
+    z-index:-5;
+}
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+/* =========================
+   NAV
+========================= */
 
-      background:
-        radial-gradient(
-          circle at 50% 25%,
-          rgba(255, 120, 155, .25),
-          transparent 30%
-        ),
-        linear-gradient(
-          to bottom,
-          #351629,
-          #5a2941 35%,
-          #1d111e 70%,
-          #080508
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:15px 10px;
+    background:rgba(10,4,10,.72);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,170,200,.12);
+}
+
+.nav-container{
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#ffd9e8;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#fff;
+    text-shadow:0 0 10px #ff8bb5;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 50px;
+    overflow:hidden;
+}
+
+/* Luna */
+
+.moon{
+    position:absolute;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:#fff2d7;
+    box-shadow:
+        0 0 25px rgba(255,230,180,.65),
+        0 0 70px rgba(255,190,170,.22);
+    top:14%;
+    right:12%;
+    opacity:.9;
+}
+
+/* Ventana */
+
+.window{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    max-width:750px;
+    height:60%;
+    border:8px solid #241722;
+    background:
+        linear-gradient(to top,
+        #140d1a 0%,
+        #30182c 35%,
+        #7a3157 67%,
+        #d9788b 100%);
+    box-shadow:
+        inset 0 0 50px rgba(0,0,0,.7),
+        0 0 30px rgba(0,0,0,.6);
+    z-index:-2;
+}
+
+.window::before,
+.window::after{
+    content:"";
+    position:absolute;
+    background:#211522;
+}
+
+.window::before{
+    width:7px;
+    height:100%;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.window::after{
+    width:100%;
+    height:7px;
+    top:52%;
+}
+
+/* Ciudad */
+
+.city{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:35%;
+    background:
+        linear-gradient(to top,#080609 0 15%,transparent 16%),
+        repeating-linear-gradient(
+            90deg,
+            #100b12 0px,
+            #100b12 30px,
+            #080609 30px,
+            #080609 50px
         );
+    opacity:.85;
+}
+
+.city::after{
+    content:"";
+    position:absolute;
+    inset:25% 0 0;
+    background:
+        radial-gradient(circle,#ffbf70 1px,transparent 2px) 10px 10px/55px 35px,
+        radial-gradient(circle,#ffd98c 1px,transparent 2px) 30px 20px/70px 45px;
+    opacity:.65;
+}
+
+/* =========================
+   HERO TEXTO
+========================= */
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:800px;
+}
+
+.small-title{
+    color:#ffc2d9;
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(55px,12vw,105px);
+    font-weight:400;
+    color:#ffd4e3;
+    text-shadow:
+        0 0 10px rgba(255,130,170,.7),
+        0 0 30px rgba(255,80,140,.3);
+    line-height:1;
+}
+
+.subtitle{
+    margin-top:25px;
+    font-size:17px;
+    color:#f7dce6;
+}
+
+/* =========================
+   BOTÓN MÚSICA
+========================= */
+
+.music-button{
+    margin-top:30px;
+    border:none;
+    padding:14px 25px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#9c3c67,#e36b96);
+    color:white;
+    font-family:'Playfair Display',serif;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:
+        0 0 20px rgba(220,80,130,.3),
+        0 8px 25px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+.music-button:hover{
+    transform:translateY(-2px) scale(1.03);
+}
+
+.music-button:active{
+    transform:scale(.97);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+    padding:90px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    font-size:52px;
+    color:#ffc6da;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#d9bdc9;
+    max-width:700px;
+    margin:0 auto 45px;
+    line-height:1.8;
+}
+
+/* =========================
+   DETALLE
+========================= */
+
+.detail-box{
+    max-width:800px;
+    margin:auto;
+    padding:35px 28px;
+    border-radius:25px;
+    background:rgba(38,16,30,.72);
+    border:1px solid rgba(255,150,190,.18);
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.4),
+        inset 0 0 30px rgba(255,100,150,.03);
+    text-align:center;
+}
+
+.detail-box p{
+    color:#f4dce5;
+    line-height:1.9;
+    font-size:16px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:rgba(31,13,25,.88);
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid rgba(255,150,190,.18);
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.55),
+        0 0 25px rgba(255,90,150,.12);
+}
+
+.card-image{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:25px 20px 28px;
+    text-align:center;
+}
+
+.card h3{
+    font-family:'Great Vibes',cursive;
+    color:#ffd0df;
+    font-size:34px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cdbbc4;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.card-button{
+    border:none;
+    background:#9f4269;
+    color:white;
+    padding:11px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-family:'Playfair Display',serif;
+    transition:.3s;
+}
+
+.card-button:hover{
+    background:#c95d86;
+    transform:scale(1.04);
+}
+
+/* =========================
+   MODAL CARTA
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,2,6,.88);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:2000;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.envelope-wrapper{
+    width:100%;
+    max-width:650px;
+    perspective:1000px;
+}
+
+.envelope{
+    background:#ead5dc;
+    color:#301521;
+    border-radius:12px;
+    padding:35px 28px;
+    position:relative;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.7),
+        0 0 30px rgba(255,120,160,.15);
+    animation:letterIn .7s ease;
+}
+
+@keyframes letterIn{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9) rotateX(10deg);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1) rotateX(0);
+    }
+}
+
+.envelope::before{
+    content:"♥";
+    position:absolute;
+    top:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#a9436b;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.envelope h2{
+    font-family:'Great Vibes',cursive;
+    text-align:center;
+    color:#96385f;
+    font-size:42px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.letter-text{
+    color:#432b35;
+    line-height:1.9;
+    font-size:15px;
+    white-space:pre-line;
+    text-align:left;
+    max-height:55vh;
+    overflow-y:auto;
+    padding-right:8px;
+}
+
+.close-button{
+    display:block;
+    margin:25px auto 0;
+    border:none;
+    background:#91375d;
+    color:white;
+    padding:10px 24px;
+    border-radius:30px;
+    cursor:pointer;
+    font-family:'Playfair Display',serif;
+}
+
+/* =========================
+   MÚSICA
+========================= */
+
+.music-player{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:320px;
+    max-width:calc(100% - 36px);
+    background:rgba(25,10,20,.95);
+    border:1px solid rgba(255,150,190,.2);
+    border-radius:18px;
+    padding:14px;
+    z-index:1500;
+    box-shadow:0 15px 45px rgba(0,0,0,.55);
+    display:none;
+}
+
+.music-player.active{
+    display:block;
+}
+
+.music-title{
+    font-family:'Great Vibes',cursive;
+    font-size:27px;
+    color:#ffd0df;
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.music-info{
+    font-size:11px;
+    color:#cdb7c2;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.music-video{
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:12px;
+}
+
+.close-music{
+    width:100%;
+    margin-top:10px;
+    border:none;
+    background:#71304b;
+    color:white;
+    padding:8px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+/* =========================
+   CORAZONES
+========================= */
+
+.heart{
+    position:fixed;
+    top:-30px;
+    color:#ff91b8;
+    font-size:18px;
+    pointer-events:none;
+    z-index:10;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:60px 20px;
+    color:#947987;
+    font-size:12px;
+}
+
+.footer-heart{
+    color:#e86693;
+    font-size:20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    .cards{
+        grid-template-columns:1fr;
+        max-width:500px;
+        margin:auto;
     }
 
-    .window {
-      position: absolute;
-
-      width: min(760px, 90vw);
-      height: min(570px, 62vh);
-
-      top: 7%;
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      border: 9px solid #1b1117;
-
-      background:
-        radial-gradient(
-          circle at 70% 20%,
-          rgba(255,240,220,.9) 0 3px,
-          transparent 4px
-        ),
-        radial-gradient(
-          circle at 20% 30%,
-          rgba(255,230,220,.7) 0 2px,
-          transparent 3px
-        ),
-        radial-gradient(
-          circle at 82% 42%,
-          rgba(255,240,220,.8) 0 2px,
-          transparent 3px
-        ),
-        linear-gradient(
-          to bottom,
-          #492541,
-          #b7526c 45%,
-          #e88180 65%,
-          #211421
-        );
-
-      box-shadow:
-        0 20px 70px rgba(0,0,0,.7);
+    .card-image{
+        height:250px;
     }
 
-    .window::before {
-      content: "";
-
-      position: absolute;
-      top: 0;
-      left: 50%;
-
-      width: 7px;
-      height: 100%;
-
-      background: #1b1117;
-
-      transform: translateX(-50%);
+    .window{
+        width:95%;
+        height:55%;
     }
 
-    .window::after {
-      content: "";
-
-      position: absolute;
-      top: 48%;
-      left: 0;
-
-      width: 100%;
-      height: 7px;
-
-      background: #1b1117;
+    .moon{
+        width:70px;
+        height:70px;
+        right:8%;
     }
 
-    .moon {
-      position: absolute;
-
-      width: 65px;
-      height: 65px;
-
-      top: 13%;
-      right: 15%;
-
-      border-radius: 50%;
-
-      background: #fff0dc;
-
-      box-shadow:
-        0 0 25px rgba(255,230,210,.7),
-        0 0 60px rgba(255,180,190,.25);
+    .nav-container{
+        gap:12px;
     }
 
-    .city {
-      position: absolute;
-
-      bottom: 0;
-      left: 0;
-
-      width: 100%;
-      height: 35%;
-
-      background:
-        linear-gradient(
-          to top,
-          #0c080d 0%,
-          #160d17 75%,
-          transparent
-        );
+    nav a{
+        font-size:11px;
     }
 
-    .city::before {
-      content: "";
-
-      position: absolute;
-
-      bottom: 0;
-      left: 0;
-
-      width: 100%;
-      height: 85%;
-
-      background: #0d090e;
-
-      clip-path: polygon(
-        0 50%,
-        5% 50%,
-        5% 25%,
-        10% 25%,
-        10% 48%,
-        16% 48%,
-        16% 15%,
-        21% 15%,
-        21% 40%,
-        28% 40%,
-        28% 5%,
-        34% 5%,
-        34% 45%,
-        40% 45%,
-        40% 20%,
-        47% 20%,
-        47% 50%,
-        54% 50%,
-        54% 12%,
-        61% 12%,
-        61% 42%,
-        67% 42%,
-        67% 0,
-        73% 0,
-        73% 42%,
-        80% 42%,
-        80% 17%,
-        86% 17%,
-        86% 47%,
-        92% 47%,
-        92% 28%,
-        100% 28%,
-        100% 100%,
-        0 100%
-      );
+    section{
+        padding:75px 18px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 5;
-
-      width: min(900px, 92%);
-
-      text-align: center;
-
-      padding: 30px 18px;
-
-      margin-top: 70px;
+    .section-title{
+        font-size:45px;
     }
 
-    .small-title {
-      font-size: clamp(14px, 3vw, 21px);
+    .music-player{
+        left:18px;
+        right:18px;
+        bottom:15px;
+        width:auto;
+        max-width:none;
+    }
+}
 
-      letter-spacing: 3px;
+@media(max-width:430px){
 
-      text-transform: uppercase;
-
-      color: #ffd7e2;
-
-      margin-bottom: 15px;
+    h1{
+        font-size:60px;
     }
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-
-      font-size: clamp(55px, 10vw, 105px);
-
-      font-weight: 400;
-
-      line-height: 1.05;
-
-      color: #fff1f5;
-
-      text-shadow:
-        0 0 12px rgba(255,150,180,.35),
-        0 0 35px rgba(255,100,150,.2);
-
-      margin-bottom: 20px;
+    .subtitle{
+        font-size:15px;
     }
 
-    .hero-heart {
-      font-size: 42px;
-
-      display: inline-block;
-
-      animation: heartbeat 1.8s infinite;
+    .detail-box{
+        padding:27px 20px;
     }
 
-    @keyframes heartbeat {
-
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      15% {
-        transform: scale(1.15);
-      }
-
-      30% {
-        transform: scale(1);
-      }
-
-      45% {
-        transform: scale(1.1);
-      }
+    .detail-box p{
+        font-size:14px;
     }
 
-    .hero-subtitle {
-      max-width: 650px;
-
-      margin: 10px auto 0;
-
-      color: #f5dce4;
-
-      font-size: clamp(18px, 3vw, 25px);
-
-      line-height: 1.5;
+    .card-image{
+        height:220px;
     }
 
-    .scroll-down {
-      display: inline-flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
-      gap: 7px;
-
-      margin-top: 30px;
-
-      color: #f5cbd7;
-
-      text-decoration: none;
-
-      letter-spacing: 2px;
-
-      font-size: 15px;
-
-      animation: floating 2s infinite ease-in-out;
+    .envelope{
+        padding:30px 20px;
     }
 
-    @keyframes floating {
-
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(8px);
-      }
+    .envelope h2{
+        font-size:36px;
     }
 
-
-    /* =====================================
-       MENÚ
-    ===================================== */
-
-    .nav {
-      position: sticky;
-
-      top: 0;
-
-      z-index: 50;
-
-      background: rgba(9,5,10,.9);
-
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid rgba(255,180,200,.12);
-
-      padding: 12px 8px;
+    .letter-text{
+        font-size:14px;
     }
-
-    .nav-container {
-      max-width: 900px;
-
-      margin: auto;
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 5px;
-    }
-
-    .nav a {
-      color: #f5dce5;
-
-      text-decoration: none;
-
-      padding: 8px 12px;
-
-      border-radius: 20px;
-
-      font-size: 15px;
-
-      transition: .3s;
-    }
-
-    .nav a:hover {
-      background: rgba(255,100,150,.15);
-    }
-
-
-    /* =====================================
-       SECCIÓN PEQUEÑO DETALLE
-    ===================================== */
-
-    .detail-section {
-      padding: 70px 16px;
-
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(255,90,140,.12),
-          transparent 30%
-        ),
-        #0a060b;
-    }
-
-    .section-container {
-      width: min(1000px, 100%);
-
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-
-      font-family: 'Great Vibes', cursive;
-
-      font-size: clamp(43px, 8vw, 70px);
-
-      font-weight: 400;
-
-      color: #ffdce6;
-
-      margin-bottom: 20px;
-    }
-
-    .section-description {
-      text-align: center;
-
-      color: #d7bac5;
-
-      font-size: clamp(17px, 3vw, 21px);
-
-      line-height: 1.6;
-
-      max-width: 700px;
-
-      margin: auto;
-    }
-
-    .detail-card {
-      max-width: 850px;
-
-      margin: 35px auto 0;
-
-      padding: clamp(25px, 5vw, 50px);
-
-      border-radius: 28px;
-
-      border: 1px solid rgba(255,180,200,.17);
-
-      background: rgba(30,15,27,.75);
-
-      box-shadow:
-        0 25px 70px rgba(0,0,0,.45);
-    }
-
-    .detail-card::before {
-      content: "❤";
-
-      display: block;
-
-      text-align: center;
-
-      color: #e96c91;
-
-      font-size: 30px;
-
-      margin-bottom: 18px;
-    }
-
-    .detail-text {
-      text-align: center;
-
-      color: #f4dce4;
-
-      font-size: clamp(18px, 3.5vw, 24px);
-
-      line-height: 1.75;
-    }
-
-
-    /* =====================================
-       TARJETAS
-    ===================================== */
-
-    .letters-section {
-      padding: 70px 16px 90px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #0a060b,
-          #100910
-        );
-    }
-
-    .cards {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 22px;
-
-      margin-top: 45px;
-    }
-
-    .card {
-      overflow: hidden;
-
-      background: #160b13;
-
-      border: 1px solid rgba(255,180,200,.15);
-
-      border-radius: 23px;
-
-      box-shadow:
-        0 20px 50px rgba(0,0,0,.45);
-
-      transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-
-      box-shadow:
-        0 25px 60px rgba(0,0,0,.55),
-        0 0 30px rgba(255,100,150,.08);
-    }
-
-    .card-image {
-      display: block;
-
-      width: 100%;
-
-      aspect-ratio: 1 / 1;
-
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 18px 15px 22px;
-
-      text-align: center;
-    }
-
-    .card h3 {
-      font-family: 'Great Vibes', cursive;
-
-      font-size: 33px;
-
-      font-weight: 400;
-
-      color: #ffd8e3;
-
-      margin-bottom: 13px;
-    }
-
-    .card-button {
-      border: none;
-
-      background: rgba(220,75,115,.18);
-
-      color: #ffdde6;
-
-      padding: 10px 18px;
-
-      border-radius: 30px;
-
-      font-family: inherit;
-
-      font-size: 16px;
-
-      cursor: pointer;
-
-      transition: .3s;
-    }
-
-    .card-button:hover,
-    .card-button:active {
-      background: rgba(220,75,115,.32);
-
-      transform: scale(1.04);
-    }
-
-
-    /* =====================================
-       FOOTER
-    ===================================== */
-
-    footer {
-      text-align: center;
-
-      padding: 35px 20px 50px;
-
-      background: #050305;
-
-      color: #9d7e8a;
-
-      font-size: 16px;
-    }
-
-    footer strong {
-      color: #eeb4c5;
-    }
-
-
-    /* =====================================
-       MODAL DEL SOBRE
-    ===================================== */
-
-    .modal {
-      position: fixed;
-
-      inset: 0;
-
-      z-index: 100;
-
-      display: none;
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 18px;
-
-      background: rgba(3,2,4,.9);
-
-      backdrop-filter: blur(12px);
-    }
-
-    .modal.active {
-      display: flex;
-
-      animation: fadeIn .35s ease;
-    }
-
-    @keyframes fadeIn {
-
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .close-modal {
-      position: fixed;
-
-      top: 18px;
-
-      right: 18px;
-
-      z-index: 200;
-
-      width: 42px;
-
-      height: 42px;
-
-      border: none;
-
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.1);
-
-      color: white;
-
-      font-size: 25px;
-
-      cursor: pointer;
-    }
-
-    .envelope-wrapper {
-      width: min(500px, 94vw);
-
-      perspective: 1200px;
-    }
-
-    .envelope {
-      position: relative;
-
-      width: 100%;
-
-      height: 315px;
-
-      border-radius: 8px;
-
-      background: #5d1e37;
-
-      box-shadow:
-        0 35px 90px rgba(0,0,0,.7),
-        0 0 40px rgba(230,80,125,.12);
-
-      transform-style: preserve-3d;
-    }
-
-    .envelope-front {
-      position: absolute;
-
-      inset: 0;
-
-      z-index: 4;
-
-      background:
-        linear-gradient(
-          145deg,
-          #792846,
-          #4f172f
-        );
-
-      clip-path: polygon(
-        0 0,
-        50% 50%,
-        100% 0,
-        100% 100%,
-        0 100%
-      );
-    }
-
-    .envelope-flap {
-      position: absolute;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 58%;
-
-      z-index: 6;
-
-      background: #8c3050;
-
-      clip-path: polygon(
-        0 0,
-        100% 0,
-        50% 100%
-      );
-
-      transform-origin: top center;
-
-      transition: transform .8s ease;
-
-      backface-visibility: hidden;
-    }
-
-    .envelope-letter {
-      position: absolute;
-
-      left: 5%;
-
-      width: 90%;
-
-      bottom: 7%;
-
-      z-index: 3;
-
-      min-height: 245px;
-
-      max-height: 67vh;
-
-      overflow-y: auto;
-
-      padding: 25px 22px;
-
-      border-radius: 5px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #fffaf6,
-          #f6e7df
-        );
-
-      color: #48232f;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,.3);
-
-      transform: translateY(0);
-
-      transition:
-        transform 1s ease,
-        z-index 0s linear .5s;
-    }
-
-    .envelope-letter h3 {
-      font-family: 'Great Vibes', cursive;
-
-      font-size: 37px;
-
-      font-weight: 400;
-
-      text-align: center;
-
-      color: #872847;
-
-      margin-bottom: 15px;
-    }
-
-    .envelope-letter p {
-      font-size: 19px;
-
-      line-height: 1.65;
-
-      text-align: left;
-    }
-
-    .envelope.open .envelope-flap {
-      transform: rotateX(180deg);
-
-      z-index: 1;
-    }
-
-    .envelope.open .envelope-letter {
-      transform: translateY(-135px);
-
-      z-index: 7;
-    }
-
-    .open-message {
-      text-align: center;
-
-      color: #f4d5df;
-
-      margin-top: 22px;
-
-      font-size: 16px;
-    }
-
-
-    /* =====================================
-       PÉTALOS
-    ===================================== */
-
-    .petal {
-      position: fixed;
-
-      top: -30px;
-
-      z-index: 2;
-
-      width: 9px;
-
-      height: 13px;
-
-      border-radius: 70% 30% 70% 30%;
-
-      background: #d95075;
-
-      opacity: .55;
-
-      pointer-events: none;
-
-      animation: falling linear infinite;
-    }
-
-    @keyframes falling {
-
-      from {
-        transform:
-          translateY(-30px)
-          rotate(0deg);
-      }
-
-      to {
-        transform:
-          translateY(110vh)
-          rotate(720deg);
-      }
-    }
-
-
-    /* =====================================
-       MÓVIL
-    ===================================== */
-
-    @media (max-width: 800px) {
-
-      .window {
-        width: 94vw;
-
-        height: 52vh;
-      }
-
-      .moon {
-        width: 48px;
-        height: 48px;
-
-        right: 10%;
-      }
-
-      .hero-content {
-        margin-top: 90px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-
-        max-width: 480px;
-
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .card-image {
-        aspect-ratio: 16 / 10;
-      }
-
-      .nav a {
-        font-size: 14px;
-
-        padding:
-          7px 9px;
-      }
-
-      section {
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-
-      .envelope {
-        height: 300px;
-      }
-
-      .envelope.open .envelope-letter {
-        transform: translateY(-120px);
-      }
-    }
-
-
-    @media (max-width: 430px) {
-
-      h1 {
-        font-size: 53px;
-      }
-
-      .small-title {
-        font-size: 13px;
-
-        letter-spacing: 2px;
-      }
-
-      .hero-subtitle {
-        font-size: 18px;
-      }
-
-      .window {
-        height: 47vh;
-      }
-
-      .detail-card {
-        padding: 25px 20px;
-      }
-
-      .detail-text {
-        font-size: 19px;
-
-        line-height: 1.65;
-      }
-
-      .card h3 {
-        font-size: 32px;
-      }
-
-      .envelope {
-        height: 285px;
-      }
-
-      .envelope-letter {
-        padding: 22px 18px;
-      }
-
-      .envelope-letter h3 {
-        font-size: 33px;
-      }
-
-      .envelope-letter p {
-        font-size: 17px;
-      }
-
-      .envelope.open .envelope-letter {
-        transform: translateY(-105px);
-      }
-    }
-
-  </style>
+}
+</style>
 </head>
-
 
 <body>
 
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
 
-  <!-- =====================================
-       PORTADA
-  ===================================== -->
+<nav>
+    <div class="nav-container">
+        <a href="#inicio">Inicio</a>
+        <a href="#detalle">Lo que amo de ti</a>
+        <a href="#amor">Una promesa</a>
+        <a href="#amor">Una última sorpresa</a>
+    </div>
+</nav>
 
-  <header class="hero" id="inicio">
 
-    <div class="window"></div>
+<!-- =========================
+     INICIO
+========================= -->
+
+<header class="hero" id="inicio">
+
+    <div class="window">
+        <div class="city"></div>
+    </div>
 
     <div class="moon"></div>
 
-    <div class="city"></div>
-
     <div class="hero-content">
 
-      <div class="small-title">
-        Para la persona que amo
-      </div>
+        <div class="small-title">
+            Para la persona que más amo
+        </div>
 
-      <h1>
-        Feliz cumpleaños<br>
-        Mi Princesa Jolly
-      </h1>
+        <h1>
+            Feliz cumpleaños<br>
+            Mi Princesa Jolly
+        </h1>
 
-      <div class="hero-heart">
-        ❤️
-      </div>
-
-      <p class="hero-subtitle">
-        Hoy quiero regalarte algo pequeño,
-        pero hecho con todo mi corazón.
-      </p>
-
-      <a
-        href="#detalle"
-        class="scroll-down"
-      >
-        Descubre tu sorpresa
-        <span>↓</span>
-      </a>
-
-    </div>
-
-  </header>
-
-
-  <!-- =====================================
-       MENÚ
-  ===================================== -->
-
-  <nav class="nav">
-
-    <div class="nav-container">
-
-      <a href="#inicio">
-        Inicio
-      </a>
-
-      <a href="#amor">
-        Lo que amo de ti
-      </a>
-
-      <a href="#amor">
-        Una promesa
-      </a>
-
-      <a href="#amor">
-        Una última sorpresa
-      </a>
-
-    </div>
-
-  </nav>
-
-
-  <!-- =====================================
-       PEQUEÑO DETALLE
-  ===================================== -->
-
-  <section
-    class="detail-section"
-    id="detalle"
-  >
-
-    <div class="section-container">
-
-      <h2 class="section-title">
-        Un pequeño detalle...
-      </h2>
-
-      <p class="section-description">
-        Algo que hice pensando solamente en ti.
-      </p>
-
-      <div class="detail-card">
-
-        <p class="detail-text">
-
-          No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz , hoy como es tu cumpleaños espero que la pases bonito amor mío , TE AMO 🖤❤️
-
+        <p class="subtitle">
+            Hoy quería hacer algo especial solamente para ti 🖤❤️
         </p>
 
-      </div>
+        <button class="music-button" onclick="openMusic()">
+            🎵 Comenzar nuestra canción
+        </button>
 
     </div>
 
-  </section>
+</header>
 
 
-  <!-- =====================================
-       LAS TRES CARTAS
-  ===================================== -->
+<!-- =========================
+     DETALLE
+========================= -->
 
-  <section
-    class="letters-section"
-    id="amor"
-  >
+<section id="detalle">
 
-    <div class="section-container">
+    <h2 class="section-title">
+        Un pequeño detalle...
+    </h2>
 
-      <h2 class="section-title">
-        Algunas palabras para ti
-      </h2>
+    <div class="detail-box">
 
-      <p class="section-description">
-        Abre cada una cuando quieras descubrir lo que tengo guardado para ti amorcito🖤❤️
-      </p>
-
-
-      <div class="cards">
-
-
-        <!-- =================================
-             CARTA 1
-        ================================= -->
-
-        <article class="card">
-
-          <img
-            src="lo-que-amo.jpg"
-            alt="Lo que amo de ti"
-            class="card-image"
-          >
-
-          <div class="card-content">
-
-            <h3>
-              Lo que amo de ti
-            </h3>
-
-            <button
-              class="card-button"
-              onclick="openLetter('love')"
-            >
-              Abrir mi carta 💌
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- =================================
-             CARTA 2
-        ================================= -->
-
-        <article class="card">
-
-          <img
-            src="una-promesa.jpg"
-            alt="Una promesa"
-            class="card-image"
-          >
-
-          <div class="card-content">
-
-            <h3>
-              Una promesa
-            </h3>
-
-            <button
-              class="card-button"
-              onclick="openLetter('promise')"
-            >
-              Leer mi promesa 💍
-            </button>
-
-          </div>
-
-        </article>
-
-
-        <!-- =================================
-             CARTA 3
-        ================================= -->
-
-        <article class="card">
-
-          <img
-            src="ultima-sorpresa.jpg"
-            alt="Una última sorpresa"
-            class="card-image"
-          >
-
-          <div class="card-content">
-
-            <h3>
-              Una última sorpresa
-            </h3>
-
-            <button
-              class="card-button"
-              onclick="openLetter('surprise')"
-            >
-              Abrir sorpresa ❤️
-            </button>
-
-          </div>
-
-        </article>
-
-
-      </div>
+        <p>
+            No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz , hoy como es tu cumpleaños espero que la pases bonito amor mío , TE AMO 🖤❤️
+        </p>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =====================================
-       PIE DE PÁGINA
-  ===================================== -->
+<!-- =========================
+     CARTAS
+========================= -->
 
-  <footer>
+<section id="amor">
 
-    Hecho con todo mi amor para
-    <strong>Jolly</strong>
-    🖤❤️
+    <h2 class="section-title">
+        Unas palabras para ti
+    </h2>
 
-  </footer>
-
-
-  <!-- =====================================
-       VENTANA DE LAS CARTAS
-  ===================================== -->
-
-  <div
-    class="modal"
-    id="letterModal"
-    onclick="closeOutside(event)"
-  >
-
-    <button
-      class="close-modal"
-      onclick="closeLetter()"
-      aria-label="Cerrar"
-    >
-      ×
-    </button>
+    <p class="section-subtitle">
+        Hay cosas que a veces es difícil decirlas en persona...
+        así que decidí guardarlas aquí para que puedas leerlas cuando quieras. 🖤
+    </p>
 
 
-    <div class="envelope-wrapper">
+    <div class="cards">
 
-      <div
-        class="envelope"
-        id="envelope"
-      >
 
-        <div class="envelope-letter">
+        <!-- CARTA 1 -->
 
-          <h3 id="letterTitle">
-            Para ti ❤️
-          </h3>
+        <div class="card">
 
-          <p id="letterText">
-          </p>
+            <img
+                src="lo-que-amo.jpg"
+                alt="Lo que amo de ti"
+                class="card-image"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    Lo que amo de ti
+                </h3>
+
+                <p>
+                    Porque hay tantas cosas de ti que hacen que te ame cada día más...
+                </p>
+
+                <button
+                    class="card-button"
+                    onclick="openLetter(0)"
+                >
+                    💌 Abrir carta
+                </button>
+
+            </div>
 
         </div>
 
 
-        <div class="envelope-flap"></div>
+        <!-- CARTA 2 -->
 
-        <div class="envelope-front"></div>
+        <div class="card">
 
-      </div>
+            <img
+                src="una-promesa.jpg"
+                alt="Una promesa"
+                class="card-image"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    Una promesa
+                </h3>
+
+                <p>
+                    Una promesa que nace de todo lo que siento por ti.
+                </p>
+
+                <button
+                    class="card-button"
+                    onclick="openLetter(1)"
+                >
+                    💌 Abrir carta
+                </button>
+
+            </div>
+
+        </div>
 
 
-      <div class="open-message">
-        Una pequeña carta hecha especialmente para ti ❤️
-      </div>
+        <!-- CARTA 3 -->
+
+        <div class="card">
+
+            <img
+                src="ultima-sorpresa.jpg"
+                alt="Una última sorpresa"
+                class="card-image"
+            >
+
+            <div class="card-content">
+
+                <h3>
+                    Una última sorpresa
+                </h3>
+
+                <p>
+                    Algo pequeño que hice pensando únicamente en ti.
+                </p>
+
+                <button
+                    class="card-button"
+                    onclick="openLetter(2)"
+                >
+                    💌 Abrir carta
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </div>
+</section>
 
 
-  <!-- =====================================
-       JAVASCRIPT
-  ===================================== -->
+<!-- =========================
+     MODAL CARTA
+========================= -->
 
-  <script>
+<div
+    class="modal"
+    id="letterModal"
+    onclick="closeLetterOutside(event)"
+>
+
+    <div class="envelope-wrapper">
+
+        <div class="envelope">
+
+            <h2 id="letterTitle">
+                Para ti...
+            </h2>
+
+            <div
+                class="letter-text"
+                id="letterText"
+            ></div>
+
+            <button
+                class="close-button"
+                onclick="closeLetter()"
+            >
+                Cerrar carta ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 
-    /* =====================================
-       TEXTOS DE LAS CARTAS
-    ===================================== */
+<!-- =========================
+     REPRODUCTOR MUSICAL
+========================= -->
 
-    const letters = {
+<div
+    class="music-player"
+    id="musicPlayer"
+>
 
-      love: {
+    <div class="music-title">
+        Nuestra canción ❤️
+    </div>
 
-        title: "Lo que amo de ti",
+    <div class="music-info">
+        貴方の側に。 — りりあ。<br>
+        Opening de Mi feliz matrimonio
+    </div>
 
-        text: `Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por esto te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
+    <iframe
+        id="musicVideo"
+        class="music-video"
+        src=""
+        title="Mi feliz matrimonio - Opening"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
 
-      },
+    <button
+        class="close-music"
+        onclick="closeMusic()"
+    >
+        Cerrar canción
+    </button>
+
+</div>
 
 
-      promise: {
+<!-- =========================
+     FOOTER
+========================= -->
 
-        title: "Una promesa",
+<footer>
 
-        text: `Prometo siempre quedarme a tu lado nunca más me volveré a alejar de ti , si me lo permites siempre estaré para ti amor SIEMPRE , porque te amo con todo mi corazón como no tienes idea , prometo que si todo sale bien , llegará el día que en verdad nos podamos conocer en persona , Te amo jolly 🖤❤️`
+    <div class="footer-heart">
+        ♥
+    </div>
 
-      },
+    Hecho con mucho amor para Jolly
+
+    <br><br>
+
+    Siempre podrás volver aquí cuando quieras. 🖤❤️
+
+</footer>
 
 
-      surprise: {
+<script>
 
-        title: "Una última sorpresa",
+/* =========================
+   CARTAS
+========================= */
 
-        text: `Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.
+const letters = [
+
+    {
+        title:"Lo que amo de ti",
+
+        text:
+`Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por esto te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
+    },
+
+
+    {
+        title:"Una promesa",
+
+        text:
+`Prometo siempre quedarme a tu lado nunca más me volveré a alejar de ti , si me lo permites siempre estaré para ti amor SIEMPRE , porque te amo con todo mi corazón como no tienes idea , prometo que si todo sale bien , llegará el día que en verdad nos podamos conocer en persona , Te amo jolly 🖤❤️`
+    },
+
+
+    {
+        title:"Una última sorpresa",
+
+        text:
+`Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.
 
 Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña página y recuerda que lo ise pensando en ti y solamente para ti jolly 🖤❤️`
-
-      }
-
-    };
-
-
-    /* =====================================
-       ABRIR CARTA
-    ===================================== */
-
-    function openLetter(type) {
-
-      const modal =
-        document.getElementById("letterModal");
-
-      const envelope =
-        document.getElementById("envelope");
-
-      const title =
-        document.getElementById("letterTitle");
-
-      const text =
-        document.getElementById("letterText");
-
-
-      title.textContent =
-        letters[type].title;
-
-
-      text.innerHTML =
-        letters[type].text.replace(
-          /\n/g,
-          "<br><br>"
-        );
-
-
-      modal.classList.add("active");
-
-
-      envelope.classList.remove("open");
-
-
-      document.body.style.overflow =
-        "hidden";
-
-
-      setTimeout(() => {
-
-        envelope.classList.add("open");
-
-      }, 500);
-
     }
 
-
-    /* =====================================
-       CERRAR CARTA
-    ===================================== */
-
-    function closeLetter() {
-
-      const modal =
-        document.getElementById("letterModal");
-
-      const envelope =
-        document.getElementById("envelope");
+];
 
 
-      envelope.classList.remove("open");
+function openLetter(index){
+
+    document.getElementById("letterTitle").textContent =
+        letters[index].title;
+
+    document.getElementById("letterText").textContent =
+        letters[index].text;
+
+    document
+        .getElementById("letterModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
 
 
-      setTimeout(() => {
+function closeLetter(){
 
-        modal.classList.remove("active");
+    document
+        .getElementById("letterModal")
+        .classList.remove("active");
 
-        document.body.style.overflow = "";
-
-      }, 500);
-
-    }
+    document.body.style.overflow = "";
+}
 
 
-    /* =====================================
-       CERRAR TOCANDO FUERA
-    ===================================== */
+function closeLetterOutside(event){
 
-    function closeOutside(event) {
-
-      if (
-        event.target.id ===
-        "letterModal"
-      ) {
-
+    if(event.target.id === "letterModal"){
         closeLetter();
+    }
 
-      }
+}
+
+
+/* =========================
+   MÚSICA
+========================= */
+
+function openMusic(){
+
+    const player =
+        document.getElementById("musicPlayer");
+
+    const video =
+        document.getElementById("musicVideo");
+
+    /*
+       Video oficial del opening enlazado
+       desde la web oficial de Mi feliz matrimonio.
+    */
+
+    if(video.src === ""){
+
+        video.src =
+        "https://www.youtube.com/embed/22snn05aEyQ?autoplay=1&rel=0";
 
     }
 
+    player.classList.add("active");
 
-    /* =====================================
-       TECLA ESC
-    ===================================== */
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (event.key === "Escape") {
-
-          closeLetter();
-
-        }
-
-      }
-    );
+}
 
 
-    /* =====================================
-       PÉTALOS
-    ===================================== */
+function closeMusic(){
 
-    function createPetal() {
+    const player =
+        document.getElementById("musicPlayer");
 
-      const petal =
+    const video =
+        document.getElementById("musicVideo");
+
+    /*
+       Al cerrar eliminamos el video para
+       detener completamente la música.
+    */
+
+    video.src = "";
+
+    player.classList.remove("active");
+
+}
+
+
+/* =========================
+   CORAZONES CAYENDO
+========================= */
+
+function createHeart(){
+
+    const heart =
         document.createElement("div");
 
+    heart.className = "heart";
 
-      petal.className =
-        "petal";
+    heart.innerHTML =
+        Math.random() > .5 ? "♥" : "❤";
 
-
-      petal.style.left =
+    heart.style.left =
         Math.random() * 100 + "vw";
 
+    heart.style.fontSize =
+        (12 + Math.random() * 14) + "px";
 
-      petal.style.animationDuration =
-        (6 + Math.random() * 7) + "s";
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
 
+    heart.style.opacity =
+        .3 + Math.random() * .6;
 
-      petal.style.animationDelay =
-        Math.random() * 4 + "s";
+    document.body.appendChild(heart);
 
+    setTimeout(() => {
+        heart.remove();
+    },10000);
 
-      petal.style.transform =
-        `rotate(${Math.random() * 360}deg)`;
+}
 
-
-      petal.style.opacity =
-        .25 + Math.random() * .5;
-
-
-      document.body.appendChild(petal);
-
-
-      setTimeout(() => {
-
-        petal.remove();
-
-      }, 15000);
-
-    }
+setInterval(createHeart,700);
 
 
-    const petalAmount =
-      window.innerWidth < 600
-        ? 8
-        : 16;
+/* =========================
+   TECLA ESC
+========================= */
 
+document.addEventListener("keydown",function(event){
 
-    for (
-      let i = 0;
-      i < petalAmount;
-      i++
-    ) {
+    if(event.key === "Escape"){
 
-      setTimeout(
-        createPetal,
-        i * 500
-      );
+        closeLetter();
+        closeMusic();
 
     }
 
+});
 
-  </script>
+</script>
 
 </body>
 </html>
