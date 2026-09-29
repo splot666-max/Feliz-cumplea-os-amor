@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feliz cumpleaños, Jolly ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+:root{
+  --pink:#f6a9d0; --pink2:#ffd2e7; --ink:#09070b; --glass:rgba(8,6,12,.72);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:#fff;background:#09070b;
+  font-family:"Cormorant Garamond",serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-3;
+  background:
+    linear-gradient(180deg,rgba(6,4,12,.18),rgba(7,4,10,.84)),
+    url("referencia-diseno.png") center top/cover fixed;
+  filter:saturate(.9) contrast(1.04);
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(255,151,205,.12),transparent 30%),
+    radial-gradient(circle at 85% 35%,rgba(255,106,165,.08),transparent 32%);
+}
+a{color:inherit;text-decoration:none}
+
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;height:58px;
+  display:flex;align-items:center;gap:34px;padding:0 4vw;
+  background:rgba(4,3,8,.68);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,180,220,.16);
+  font-size:16px;
+}
+.nav .heart{font-size:25px;color:var(--pink2)}
+.nav a{opacity:.88;transition:.25s}
+.nav a:hover{color:var(--pink);transform:translateY(-1px)}
+
+.hero{
+  min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;
+  align-items:center;gap:4vw;padding:110px 7vw 70px;
+  position:relative;
+}
+.hero:after{
+  content:"";position:absolute;inset:58px 0 0;
+  background:linear-gradient(90deg,rgba(0,0,0,.2),rgba(5,2,10,.25));
+  z-index:-1;
+}
+.bouquet{
+  min-height:560px;border-radius:22px;
+  background:
+    linear-gradient(180deg,transparent 55%,rgba(0,0,0,.48)),
+    radial-gradient(circle at 35% 50%,#7c193e 0 4%,transparent 5%),
+    radial-gradient(circle at 55% 40%,#f6c0d0 0 5%,transparent 6%),
+    radial-gradient(circle at 22% 35%,#a7204f 0 5%,transparent 6%),
+    linear-gradient(135deg,#2a101d,#160b12 55%,#08060b);
+  box-shadow:0 25px 70px rgba(0,0,0,.5);
+  overflow:hidden;position:relative;
+}
+.bouquet:before{
+  content:"🌹 🌹 🌹  🌸  🌹 🌹  🌸  🌹";
+  position:absolute;inset:15% 5% auto;text-align:center;
+  font-size:58px;line-height:1.45;filter:drop-shadow(0 8px 12px #000);
+}
+.bouquet:after{
+  content:"Rosas rojas  ·  Lirios rosados  ·  Pétalos";
+  position:absolute;bottom:30px;left:0;right:0;text-align:center;
+  color:#ffd7e8;font-size:18px;letter-spacing:2px;
+}
+.hero-copy{max-width:680px}
+.kicker{font-size:18px;color:var(--pink2);letter-spacing:3px}
+h1{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(64px,8vw,112px);line-height:.92;margin:12px 0 18px;color:#ffc1e2;text-shadow:0 0 25px rgba(255,121,189,.45)}
+h1 span{display:block;font-size:.78em}
+.divider{color:var(--pink);font-size:28px;letter-spacing:15px}
+.hero-copy>p{font-size:23px;line-height:1.35;max-width:600px;color:#f8e9f0}
+
+.section{padding:70px 7vw}
+.detail{
+  max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr 1fr;
+  min-height:430px;border:1px solid rgba(255,198,225,.45);
+  border-radius:18px;overflow:hidden;background:var(--glass);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);backdrop-filter:blur(7px);
+}
+.detail-photo{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.5)),
+    url("referencia-diseno.png") center 62%/cover;
+  min-height:430px;
+}
+.detail-copy{padding:55px 50px;display:flex;flex-direction:column;justify-content:center}
+.detail-copy h2,.cards-title{
+  font-family:"Great Vibes",cursive;font-weight:400;color:#ffc0e1;font-size:45px;margin:0 0 20px;
+}
+.detail-copy p{font-size:22px;line-height:1.38;margin:0;color:#fff5fa}
+.teamo{margin-top:24px;font-size:28px!important;color:#ffd2e6!important}
+
+.cards{
+  max-width:1050px;margin:50px auto 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+}
+.card{
+  background:rgba(5,4,9,.88);border:1px solid rgba(255,191,222,.65);
+  border-radius:14px;overflow:hidden;cursor:pointer;
+  transition:transform .3s,box-shadow .3s;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 45px rgba(255,105,175,.2)}
+.card img{width:100%;height:270px;object-fit:cover;display:block}
+.card-body{text-align:center;padding:16px 10px 19px}
+.card-body h3{font-family:"Great Vibes",cursive;color:#ffc2e1;font-size:31px;font-weight:400;margin:0 0 4px}
+.card-body small{color:#f3dbe7}
+
+footer{text-align:center;padding:70px 20px 100px}
+footer p{font-family:"Great Vibes",cursive;color:#ffc2e1;font-size:39px;max-width:650px;margin:0 auto}
+footer small{display:block;margin-top:18px;font-size:18px}
+
+.modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);
+  z-index:100;display:none;align-items:center;justify-content:center;padding:20px;
+}
+.modal.open{display:flex}
+.envelope-scene{width:min(620px,94vw);min-height:430px;display:flex;align-items:center;justify-content:center;position:relative}
+.envelope{width:min(520px,88vw);height:310px;position:relative;cursor:pointer;transform-style:preserve-3d;filter:drop-shadow(0 25px 45px rgba(0,0,0,.65));transition:transform .35s ease}
+.envelope:hover{transform:translateY(-6px) scale(1.015)}
+.envelope-back{position:absolute;inset:0;border-radius:12px;background:linear-gradient(145deg,#7b214e,#3a1229);border:1px solid rgba(255,202,226,.65);overflow:hidden}
+.envelope-paper{position:absolute;left:6%;right:6%;top:9%;height:78%;background:linear-gradient(145deg,#fff7fa,#f4dce8);color:#321625;border-radius:8px;padding:34px 28px;transform:translateY(95px);opacity:0;z-index:2;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .45s ease;box-shadow:0 8px 25px rgba(0,0,0,.25);overflow:auto}
+.envelope-paper h3{font-family:"Great Vibes",cursive;font-size:42px;font-weight:400;color:#8f2d60;text-align:center;margin:0 0 15px}
+.envelope-paper p{font-size:20px;line-height:1.45;margin:0;white-space:pre-line}
+.envelope-flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:4;transform-origin:top center;background:linear-gradient(145deg,#a13a6a,#581b3d);clip-path:polygon(0 0,100% 0,50% 100%);border-top:1px solid rgba(255,220,236,.65);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.envelope-front{position:absolute;left:0;right:0;bottom:0;height:61%;z-index:3;background:linear-gradient(145deg,#8d2a59,#45152f);clip-path:polygon(0 100%,0 18%,50% 65%,100% 18%,100% 100%);border-bottom:1px solid rgba(255,202,226,.65)}
+.envelope-seal{position:absolute;z-index:6;left:50%;top:57%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#f6a9d0;color:#6b183f;font-size:27px;box-shadow:0 5px 20px rgba(0,0,0,.35);transition:.35s}
+.envelope-hint{position:absolute;bottom:-42px;left:0;right:0;text-align:center;color:#ffd4e7;font-size:18px;letter-spacing:.4px}
+.envelope.opened .envelope-flap{transform:rotateX(180deg)}
+.envelope.opened .envelope-paper{transform:translateY(-42px);opacity:1;z-index:5}
+.envelope.opened .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.5)}
+.envelope.opened .envelope-hint{opacity:0}
+.letter-close{position:fixed;right:22px;top:15px;background:none;border:0;color:#ffd1e6;font-size:34px;cursor:pointer;z-index:120}
+@media(max-width:600px){.envelope{height:260px}.envelope-paper{padding:25px 19px}.envelope-paper h3{font-size:34px}.envelope-paper p{font-size:17px}}
+.petal{
+  position:fixed;top:-30px;z-index:10;pointer-events:none;
+  animation:fall linear forwards;opacity:.85;
+}
+@keyframes fall{
+  to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:.05}
+}
+
+@media(max-width:800px){
+  .nav{gap:14px;font-size:13px;overflow:auto;white-space:nowrap}
+  .hero{grid-template-columns:1fr;padding:100px 5vw 40px}
+  .bouquet{min-height:320px}
+  h1{font-size:70px}
+  .hero-copy>p{font-size:19px}
+  .detail{grid-template-columns:1fr}
+  .detail-photo{min-height:300px}
+  .detail-copy{padding:34px 25px}
+  .detail-copy p{font-size:19px}
+  .cards{grid-template-columns:1fr 1fr;gap:15px}
+  .card img{height:210px}
+}
+@media(max-width:500px){
+  .cards{grid-template-columns:1fr}
+  .card img{height:260px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="heart">♡</span>
+  <a href="#inicio">Inicio</a>
+  <a href="#amor">Lo que amo de ti</a>
+  <a href="#promesa">Una promesa</a>
+  <a href="#sorpresa">Una última sorpresa</a>
+</nav>
+
+<main id="inicio">
+<section class="hero">
+  <div class="bouquet" aria-label="Ramo de rosas y lirios"></div>
+  <div class="hero-copy">
+    <div class="kicker">PARA LA PERSONA MÁS ESPECIAL ♡</div>
+    <h1>Feliz cumpleaños<span>Mi Princesa Jolly</span></h1>
+    <div class="divider">♡ ───── ♡</div>
+    <p>Este día tan especial quiero que lo recuerdes muy bien porque esto lo hago solo para ti porque te lo mereces amor.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-photo"></div>
+    <div class="detail-copy">
+      <h2>Un pequeño detalle...</h2>
+      <p>No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz, hoy como es tu cumpleaños espero que la pases bonito amor mío,</p>
+      <p class="teamo">TE AMO 🖤❤️</p>
+    </div>
+  </div>
+
+  <div class="cards">
+    <article class="card" id="amor" data-letter="amor">
+      <img src="img/lo-que-amo.jpg" alt="Lo que amo de ti">
+      <div class="card-body"><h3>Lo que amo de ti</h3><small>♡ Haz clic para abrir</small></div>
+    </article>
+
+    <article class="card" id="promesa" data-letter="promesa">
+      <img src="img/una-promesa.jpg" alt="Una promesa">
+      <div class="card-body"><h3>Una promesa</h3><small>♡ Haz clic para abrir</small></div>
+    </article>
+
+    <article class="card" id="sorpresa" data-letter="sorpresa">
+      <img src="img/ultima-sorpresa.jpg" alt="Una última sorpresa">
+      <div class="card-body"><h3>Una última sorpresa</h3><small>♡ Haz clic para abrir</small></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Gracias por existir, por ser tú,<br>por hacer mi vida más bonita...</p>
+  <small>♡ Hoy, mañana y siempre... ♡</small>
+</footer>
+
+<div class="modal" id="modal">
+  <button class="letter-close" aria-label="Cerrar">×</button>
+  <div class="envelope-scene">
+    <div class="envelope" id="loveEnvelope" role="button" tabindex="0" aria-label="Abrir carta">
+      <div class="envelope-back"></div>
+      <div class="envelope-paper">
+        <h3>Para mi princesa Jolly ♡</h3>
+        <p id="loveLetterText"></p>
+      </div>
+      <div class="envelope-flap"></div>
+      <div class="envelope-front"></div>
+      <div class="envelope-seal">♥</div>
+      <div class="envelope-hint">Toca el sobre para abrir tu carta ♡</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById("modal");
+const envelope=document.getElementById("loveEnvelope");
+const loveLetterText=document.getElementById("loveLetterText");
+
+/* ✍️ CAMBIA SOLO ESTE TEXTO PARA PERSONALIZAR LA CARTA */
+const LOVE_LETTER = `Tu sabes que me gusta todo de ti, tu sonrisa, como ries, tu voz, tu hermosura, todo de ti me tiene loco de amor.
+
+Aunque me digas que eres un caos Jolly, tu sabes que no eres eso, tu eres una mujer muy buena de corazón y por esto te amo, y me gusta todo eso de ti.
+
+Nunca te dejaré sola Jolly, siempre puedes contar conmigo. 🖤❤️`;
+
+const OTHER_LETTERS={
+  promesa:"Prometo siempre quedarme a tu lado, nunca más me volveré a alejar de ti. Si me lo permites, siempre estaré para ti amor, SIEMPRE, porque te amo con todo mi corazón como no tienes idea. Prometo que, si todo sale bien, llegará el día que en verdad nos podamos conocer en persona. Te amo Jolly 🖤❤️",
+
+  sorpresa:"Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.\n\nSi algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña página y recuerda que lo hice pensando en ti y solamente para ti Jolly. 🖤❤️"
+};
+
+function openEnvelope(text,autoOpen=false){
+  loveLetterText.textContent=text;
+  envelope.classList.remove("opened");
+  modal.classList.add("open");
+  if(autoOpen) setTimeout(()=>envelope.classList.add("opened"),180);
+}
+
+document.querySelector('[data-letter="amor"]').addEventListener("click",()=>openEnvelope(LOVE_LETTER));
+document.querySelector('[data-letter="promesa"]').addEventListener("click",()=>openEnvelope(OTHER_LETTERS.promesa,true));
+document.querySelector('[data-letter="sorpresa"]').addEventListener("click",()=>openEnvelope(OTHER_LETTERS.sorpresa,true));
+
+envelope.addEventListener("click",()=>envelope.classList.toggle("opened"));
+envelope.addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();envelope.classList.toggle("opened")}
+});
+
+document.querySelector(".letter-close").onclick=()=>{
+  modal.classList.remove("open"); envelope.classList.remove("opened");
+};
+modal.addEventListener("click",e=>{
+  if(e.target===modal){modal.classList.remove("open");envelope.classList.remove("opened")}
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){modal.classList.remove("open");envelope.classList.remove("opened")}
+});
+
+function petals(){
+  const p=document.createElement("span");
+  p.className="petal";
+  p.textContent=Math.random()>.45?"🌹":"🌸";
+  p.style.left=Math.random()*100+"vw";
+  p.style.fontSize=(10+Math.random()*16)+"px";
+  p.style.setProperty("--drift",(Math.random()*240-120)+"px");
+  p.style.animationDuration=(6+Math.random()*6)+"s";
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),13000);
+}
+setInterval(petals,650);
+</script>
+</body>
+</html>
