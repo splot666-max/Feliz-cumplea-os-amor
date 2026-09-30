@@ -10,16 +10,16 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    FUENTES
-========================= */
+========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
 
 
-/* =========================
+/* =========================================================
    GENERAL
-========================= */
+========================================================= */
 
 *{
     margin:0;
@@ -39,21 +39,338 @@ body{
 }
 
 
-/* =========================
-   FONDO
-========================= */
+/* =========================================================
+   PANTALLA INICIAL
+========================================================= */
+
+.intro-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(128,35,75,.28),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080308,
+            #160812,
+            #080308
+        );
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+
+.intro-screen.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+}
+
+
+.intro-content{
+
+    width:100%;
+
+    max-width:600px;
+
+    animation:
+        introAppear 1.5s ease;
+}
+
+
+@keyframes introAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px)
+            scale(.95);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.intro-heart{
+
+    font-size:55px;
+
+    color:#ff8eb6;
+
+    margin-bottom:15px;
+
+    animation:
+        heartbeat 1.8s infinite;
+}
+
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+
+.intro-title{
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    color:#ffd2e1;
+
+    font-size:
+        clamp(
+            55px,
+            13vw,
+            85px
+        );
+
+    font-weight:400;
+
+    text-shadow:
+
+        0 0 15px
+        rgba(255,100,160,.5),
+
+        0 0 40px
+        rgba(255,80,140,.2);
+
+    margin-bottom:15px;
+}
+
+
+.intro-question{
+
+    color:#e9ccd8;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   BOTONES DE LA PREGUNTA
+========================================================= */
+
+.answer-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+.answer-button{
+
+    border:none;
+
+    padding:
+        14px 25px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #96385f,
+            #df6794
+        );
+
+    color:white;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(0,0,0,.4),
+
+        0 0 20px
+        rgba(220,80,130,.25);
+
+    transition:.3s;
+}
+
+
+.answer-button:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0,0,0,.5),
+
+        0 0 30px
+        rgba(255,100,160,.3);
+}
+
+
+.answer-button:active{
+
+    transform:
+        scale(.95);
+}
+
+
+/* =========================================================
+   MENSAJE DESPUÉS DE RESPONDER
+========================================================= */
+
+.love-message{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:#09050a;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:1s;
+}
+
+
+.love-message.show{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+
+.love-message-content{
+
+    max-width:650px;
+}
+
+
+.love-message-heart{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+
+.love-message h2{
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    color:#ffd0df;
+
+    font-size:60px;
+
+    font-weight:400;
+
+    margin-bottom:20px;
+}
+
+
+.love-message p{
+
+    color:#ddc3ce;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   FONDO GENERAL
+========================================================= */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
 
     background:
+
         radial-gradient(
             circle at 50% 20%,
             rgba(160,55,100,.18),
             transparent 40%
         ),
+
         linear-gradient(
             to bottom,
             #120812,
@@ -65,9 +382,9 @@ body::before{
 }
 
 
-/* =========================
+/* =========================================================
    NAVEGACIÓN
-========================= */
+========================================================= */
 
 nav{
 
@@ -82,9 +399,11 @@ nav{
 
     padding:15px 10px;
 
-    background:rgba(10,4,10,.72);
+    background:
+        rgba(10,4,10,.72);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     border-bottom:
         1px solid
@@ -130,9 +449,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
 
@@ -149,23 +468,22 @@ nav a:hover{
     text-align:center;
 
     padding:
-        100px
-        20px
-        50px;
+        100px 20px 50px;
 
     overflow:hidden;
 }
 
 
-/* =========================
+/* =========================================================
    LUNA
-========================= */
+========================================================= */
 
 .moon{
 
     position:absolute;
 
     width:100px;
+
     height:100px;
 
     border-radius:50%;
@@ -188,9 +506,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    VENTANA
-========================= */
+========================================================= */
 
 .window{
 
@@ -269,9 +587,9 @@ nav a:hover{
 }
 
 
-/* =========================
+/* =========================================================
    CIUDAD
-========================= */
+========================================================= */
 
 .city{
 
@@ -333,9 +651,9 @@ nav a:hover{
 }
 
 
-/* =========================
-   TEXTO HERO
-========================= */
+/* =========================================================
+   HERO TEXTO
+========================================================= */
 
 .hero-content{
 
@@ -400,72 +718,14 @@ h1{
 }
 
 
-/* =========================
-   BOTÓN DE MÚSICA
-========================= */
-
-.music-button{
-
-    margin-top:30px;
-
-    border:none;
-
-    padding:
-        14px 25px;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #9c3c67,
-            #e36b96
-        );
-
-    color:white;
-
-    font-family:
-        'Playfair Display',
-        serif;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-    box-shadow:
-
-        0 0 20px
-        rgba(220,80,130,.3),
-
-        0 8px 25px
-        rgba(0,0,0,.4);
-
-    transition:.3s;
-}
-
-
-.music-button:hover{
-
-    transform:
-        translateY(-2px)
-        scale(1.03);
-}
-
-
-.music-button:active{
-
-    transform:
-        scale(.97);
-}
-
-
-/* =========================
+/* =========================================================
    SECCIONES
-========================= */
+========================================================= */
 
 section{
 
-    padding:90px 20px;
+    padding:
+        90px 20px;
 
     max-width:1000px;
 
@@ -504,9 +764,9 @@ section{
 }
 
 
-/* =========================
-   DETALLE
-========================= */
+/* =========================================================
+   PEQUEÑO DETALLE
+========================================================= */
 
 .detail-box{
 
@@ -548,9 +808,9 @@ section{
 }
 
 
-/* =========================
+/* =========================================================
    TARJETAS
-========================= */
+========================================================= */
 
 .cards{
 
@@ -614,9 +874,7 @@ section{
 .card-content{
 
     padding:
-        25px
-        20px
-        28px;
+        25px 20px 28px;
 
     text-align:center;
 }
@@ -682,9 +940,9 @@ section{
 }
 
 
-/* =========================
+/* =========================================================
    MODAL CARTA
-========================= */
+========================================================= */
 
 .modal{
 
@@ -877,9 +1135,168 @@ section{
 }
 
 
-/* =========================
+/* =========================================================
+   ÚLTIMA SORPRESA / CANCIÓN
+========================================================= */
+
+.song-section{
+
+    min-height:70vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.song-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(190,65,110,.18),
+            transparent 55%
+        );
+
+    pointer-events:none;
+}
+
+
+.song-content{
+
+    position:relative;
+
+    max-width:750px;
+
+    padding:20px;
+}
+
+
+.song-small{
+
+    color:#d79caf;
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+
+.song-title{
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:
+        clamp(
+            48px,
+            10vw,
+            75px
+        );
+
+    color:#ffd0df;
+
+    font-weight:400;
+
+    margin-bottom:25px;
+}
+
+
+.song-text{
+
+    color:#dbc4ce;
+
+    line-height:2;
+
+    font-size:15px;
+
+    margin-bottom:35px;
+}
+
+
+.song-button{
+
+    display:inline-block;
+
+    border:none;
+
+    text-decoration:none;
+
+    padding:
+        15px 28px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #96385f,
+            #e36b96
+        );
+
+    color:white;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0,0,0,.45),
+
+        0 0 25px
+        rgba(230,80,140,.2);
+
+    transition:.3s;
+}
+
+
+.song-button:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+
+.song-note{
+
+    margin-top:18px;
+
+    color:#927583;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
    CORAZONES
-========================= */
+========================================================= */
 
 .heart{
 
@@ -913,15 +1330,16 @@ section{
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
 
     text-align:center;
 
-    padding:60px 20px;
+    padding:
+        60px 20px;
 
     color:#947987;
 
@@ -937,9 +1355,9 @@ footer{
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media(max-width:800px){
 
@@ -1006,6 +1424,26 @@ footer{
 
 @media(max-width:430px){
 
+    .intro-title{
+
+        font-size:58px;
+    }
+
+
+    .intro-question{
+
+        font-size:16px;
+    }
+
+
+    .answer-button{
+
+        width:100%;
+
+        max-width:260px;
+    }
+
+
     h1{
 
         font-size:60px;
@@ -1065,43 +1503,172 @@ footer{
 <body>
 
 
-<!-- =========================
+<!-- ======================================================
+     PANTALLA INICIAL
+====================================================== -->
+
+<div
+    class="intro-screen"
+    id="introScreen"
+>
+
+
+    <div class="intro-content">
+
+
+        <div class="intro-heart">
+
+            ♥️
+
+        </div>
+
+
+        <h1 class="intro-title">
+
+            Jolly...
+
+        </h1>
+
+
+        <p class="intro-question">
+
+            Antes de comenzar hay algo
+            que quiero preguntarte...
+
+            <br><br>
+
+            <strong>
+                ¿Me amas? ❤️
+            </strong>
+
+        </p>
+
+
+        <div class="answer-buttons">
+
+
+            <button
+                class="answer-button"
+                onclick="startExperience()"
+            >
+
+                Sí ❤️
+
+            </button>
+
+
+            <button
+                class="answer-button"
+                onclick="startExperience()"
+            >
+
+                Sí, muchísimo ❤️
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     MENSAJE DE TRANSICIÓN
+====================================================== -->
+
+<div
+    class="love-message"
+    id="loveMessage"
+>
+
+
+    <div class="love-message-content">
+
+
+        <div class="love-message-heart">
+
+            ❤️
+
+        </div>
+
+
+        <h2>
+
+            Lo sabía...
+
+        </h2>
+
+
+        <p>
+
+            Entonces ahora sí...
+            quiero enseñarte algo que hice
+            pensando solamente en ti.
+
+            <br><br>
+
+            Espero que te guste, mi Jolly. 🖤❤️
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
      NAVEGACIÓN
-========================= -->
+====================================================== -->
 
 <nav>
 
     <div class="nav-container">
 
+
         <a href="#inicio">
             Inicio
         </a>
+
 
         <a href="#detalle">
             Lo que amo de ti
         </a>
 
+
         <a href="#amor">
             Una promesa
         </a>
 
-        <a href="#amor">
+
+        <a href="#sorpresa">
             Una última sorpresa
         </a>
+
+
+        <a href="#cancion">
+            Nuestra canción
+        </a>
+
 
     </div>
 
 </nav>
 
 
-<!-- =========================
-     INICIO
-========================= -->
+
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <header
     class="hero"
     id="inicio"
 >
+
 
     <div class="window">
 
@@ -1114,6 +1681,7 @@ footer{
 
 
     <div class="hero-content">
+
 
         <div class="small-title">
 
@@ -1139,27 +1707,18 @@ footer{
         </p>
 
 
-        <!-- BOTÓN DE MÚSICA -->
-
-        <button
-            class="music-button"
-            onclick="openMusic()"
-        >
-
-            🎵 Comenzar nuestra canción
-
-        </button>
-
     </div>
 
 </header>
 
 
-<!-- =========================
-     DETALLE
-========================= -->
+
+<!-- ======================================================
+     PEQUEÑO DETALLE
+====================================================== -->
 
 <section id="detalle">
+
 
     <h2 class="section-title">
 
@@ -1169,6 +1728,7 @@ footer{
 
 
     <div class="detail-box">
+
 
         <p>
 
@@ -1181,9 +1741,10 @@ footer{
 </section>
 
 
-<!-- =========================
+
+<!-- ======================================================
      CARTAS
-========================= -->
+====================================================== -->
 
 <section id="amor">
 
@@ -1197,7 +1758,7 @@ footer{
 
     <p class="section-subtitle">
 
-        Hay cosas que a veces es difícil decirlas en persona...
+        Hay cosas que a veces es difícil decirlas..
         así que decidí guardarlas aquí para que puedas leerlas cuando quieras. 🖤
 
     </p>
@@ -1206,9 +1767,7 @@ footer{
     <div class="cards">
 
 
-        <!-- =====================
-             CARTA 1
-        ====================== -->
+        <!-- CARTA 1 -->
 
         <div class="card">
 
@@ -1253,9 +1812,7 @@ footer{
 
 
 
-        <!-- =====================
-             CARTA 2
-        ====================== -->
+        <!-- CARTA 2 -->
 
         <div class="card">
 
@@ -1300,11 +1857,12 @@ footer{
 
 
 
-        <!-- =====================
-             CARTA 3
-        ====================== -->
+        <!-- CARTA 3 -->
 
-        <div class="card">
+        <div
+            class="card"
+            id="sorpresa"
+        >
 
 
             <img
@@ -1351,9 +1909,88 @@ footer{
 </section>
 
 
-<!-- =========================
-     MODAL CARTA
-========================= -->
+
+<!-- ======================================================
+     SECCIÓN FINAL DE LA CANCIÓN
+====================================================== -->
+
+<section
+    class="song-section"
+    id="cancion"
+>
+
+
+    <div class="song-content">
+
+
+        <div class="song-small">
+
+            Y ahora sí...
+
+        </div>
+
+
+        <h2 class="song-title">
+
+            Una última canción para ti
+
+        </h2>
+
+
+        <p class="song-text">
+
+            Llegaste hasta el final... ❤️
+
+            <br><br>
+
+            Pero todavía me faltaba regalarte algo.
+
+            <br>
+
+            Esta canción como dijiste es de nosotros,
+            y quiero que la escuches mientras
+            recuerdas todo lo que te escribí.
+
+            <br><br>
+
+            Feliz Cumpleaños,
+            Mi Jolly.
+
+            <br>
+
+            Te amo muchísimo. 🖤❤️
+
+        </p>
+
+
+        <a
+            class="song-button"
+            href="https://www.youtube.com/watch?v=22snn05aEyQ"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            🎵 Escuchar nuestra canción
+
+        </a>
+
+
+        <div class="song-note">
+
+            「貴方の側に。」 — りりあ。<br>
+            Opening de Mi feliz matrimonio
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     MODAL CARTAS
+====================================================== -->
 
 <div
     class="modal"
@@ -1398,9 +2035,10 @@ footer{
 </div>
 
 
-<!-- =========================
+
+<!-- ======================================================
      FOOTER
-========================= -->
+====================================================== -->
 
 <footer>
 
@@ -1412,7 +2050,7 @@ footer{
     </div>
 
 
-    Hecho con mucho amor para Jolly
+    Hecho con mucho amor para Mi Jolly
 
 
     <br>
@@ -1422,16 +2060,68 @@ footer{
     Siempre podrás volver aquí
     cuando quieras. 🖤❤️
 
-
 </footer>
+
 
 
 <script>
 
 
-/* =========================
+/* =========================================================
+   INICIAR EXPERIENCIA
+========================================================= */
+
+function startExperience(){
+
+
+    const intro =
+        document.getElementById(
+            "introScreen"
+        );
+
+
+    const message =
+        document.getElementById(
+            "loveMessage"
+        );
+
+
+    /*
+       Primero ocultamos la pregunta
+    */
+
+    intro.classList.add("hidden");
+
+
+    /*
+       Mostramos el mensaje romántico
+    */
+
+    setTimeout(function(){
+
+        message.classList.add("show");
+
+    },700);
+
+
+    /*
+       Después desaparece el mensaje
+       y aparece la página.
+    */
+
+    setTimeout(function(){
+
+        message.classList.remove("show");
+
+    },3000);
+
+}
+
+
+
+/* =========================================================
    CARTAS
-========================= */
+========================================================= */
 
 const letters = [
 
@@ -1441,7 +2131,7 @@ const letters = [
         title:"Lo que amo de ti",
 
         text:
-`Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por esto te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
+`Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura, tu personalidad todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por eso te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
 
     },
 
@@ -1461,9 +2151,9 @@ const letters = [
         title:"Una última sorpresa",
 
         text:
-`Quiero que sepas que todo esto lo hice pensando en ti, no necesitaba una fecha especial para recordarte cuánto te amo, pero hoy quería hacer algo que fuera solamente para ti amorcito.
+`jolly tu sabes que te amo mucho , tal vez no pueda darte nada en físico por ahora pero creeme que me gustaría llevarte un ramo de flores que tanto te gusta, si seguimos bien esa distancia se puede romper.
 
-Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña página y recuerda que lo ise pensando en ti y solamente para ti jolly 🖤❤️`
+ y llegaria el dia en que si pueda abrazarte como se debe amor , te amo jolly , feliz cumpleaños mi princesa, nunca olvides que eres la dueña de mi corazón 🖤❤️`
 
     }
 
@@ -1471,9 +2161,9 @@ Si algún día dudas de lo mucho que significas para mí, vuelve a esta pequeña
 
 
 
-/* =========================
+/* =========================================================
    ABRIR CARTA
-========================= */
+========================================================= */
 
 function openLetter(index){
 
@@ -1491,7 +2181,9 @@ function openLetter(index){
 
 
     document
-        .getElementById("letterModal")
+        .getElementById(
+            "letterModal"
+        )
         .classList.add("active");
 
 
@@ -1502,15 +2194,17 @@ function openLetter(index){
 
 
 
-/* =========================
+/* =========================================================
    CERRAR CARTA
-========================= */
+========================================================= */
 
 function closeLetter(){
 
 
     document
-        .getElementById("letterModal")
+        .getElementById(
+            "letterModal"
+        )
         .classList.remove("active");
 
 
@@ -1521,9 +2215,9 @@ function closeLetter(){
 
 
 
-/* =========================
-   CERRAR AL TOCAR AFUERA
-========================= */
+/* =========================================================
+   CERRAR CARTA TOCANDO AFUERA
+========================================================= */
 
 function closeLetterOutside(event){
 
@@ -1541,34 +2235,9 @@ function closeLetterOutside(event){
 
 
 
-/* =========================
-   MÚSICA
-========================= */
-
-function openMusic(){
-
-    /*
-       Abrimos directamente el
-       opening oficial de YouTube.
-
-       Esto es más compatible con
-       celulares que intentar
-       incrustar el audio dentro
-       de nuestra página.
-    */
-
-    window.open(
-        "https://www.youtube.com/watch?v=22snn05aEyQ",
-        "_blank"
-    );
-
-}
-
-
-
-/* =========================
-   CORAZONES CAYENDO
-========================= */
+/* =========================================================
+   CORAZONES
+========================================================= */
 
 function createHeart(){
 
@@ -1616,8 +2285,10 @@ function createHeart(){
 
 
     setTimeout(
-        () => {
+        function(){
+
             heart.remove();
+
         },
         10000
     );
@@ -1632,15 +2303,17 @@ setInterval(
 
 
 
-/* =========================
-   TECLA ESC
-========================= */
+/* =========================================================
+   ESC PARA CERRAR CARTA
+========================================================= */
 
 document.addEventListener(
     "keydown",
     function(event){
 
-        if(event.key === "Escape"){
+        if(
+            event.key === "Escape"
+        ){
 
             closeLetter();
 
