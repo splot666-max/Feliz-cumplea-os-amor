@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Feliz cumpleaños Mi Princesa Jolly</title>
+<title>Feliz cumpleaños Mi Princesa Jolly ❤️</title>
 
 <style>
-
-/* =========================================================
-   FUENTES
-========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap');
-
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -32,1953 +17,624 @@ html{
 }
 
 body{
-    background:#09050a;
-    color:white;
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
+    background:#08070b;
+    color:#fff;
     overflow-x:hidden;
 }
 
-
-/* =========================================================
-   PANTALLA INICIAL
-========================================================= */
-
-.intro-screen{
-
+/* INTRO */
+#intro{
     position:fixed;
-
     inset:0;
-
     z-index:9999;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-align:center;
-
     padding:25px;
-
     background:
-
-        radial-gradient(
-            circle at center,
-            rgba(128,35,75,.28),
-            transparent 45%
-        ),
-
-        linear-gradient(
-            135deg,
-            #080308,
-            #160812,
-            #080308
-        );
-
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        radial-gradient(circle at 50% 35%,rgba(130,30,80,.35),transparent 35%),
+        linear-gradient(#08070b,#170912);
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
-
-.intro-screen.hidden{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    pointer-events:none;
-}
-
-
-.intro-content{
-
-    width:100%;
-
+.intro-box{
     max-width:600px;
-
-    animation:
-        introAppear 1.5s ease;
+    animation:fadeUp 1.5s ease;
 }
-
-
-@keyframes introAppear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(30px)
-            scale(.95);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-.intro-heart{
-
-    font-size:55px;
-
-    color:#ff8eb6;
-
-    margin-bottom:15px;
-
-    animation:
-        heartbeat 1.8s infinite;
-}
-
-
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.18);
-    }
-}
-
 
 .intro-title{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    color:#ffd2e1;
-
-    font-size:
-        clamp(
-            55px,
-            13vw,
-            85px
-        );
-
-    font-weight:400;
-
-    text-shadow:
-
-        0 0 15px
-        rgba(255,100,160,.5),
-
-        0 0 40px
-        rgba(255,80,140,.2);
-
-    margin-bottom:15px;
-}
-
-
-.intro-question{
-
-    color:#e9ccd8;
-
-    font-size:18px;
-
-    margin-bottom:35px;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   BOTONES DE LA PREGUNTA
-========================================================= */
-
-.answer-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-
-.answer-button{
-
-    border:none;
-
-    padding:
-        14px 25px;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #96385f,
-            #df6794
-        );
-
-    color:white;
-
-    font-family:
-        'Playfair Display',
-        serif;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-    box-shadow:
-
-        0 8px 25px
-        rgba(0,0,0,.4),
-
-        0 0 20px
-        rgba(220,80,130,.25);
-
-    transition:.3s;
-}
-
-
-.answer-button:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.04);
-
-    box-shadow:
-
-        0 12px 30px
-        rgba(0,0,0,.5),
-
-        0 0 30px
-        rgba(255,100,160,.3);
-}
-
-
-.answer-button:active{
-
-    transform:
-        scale(.95);
-}
-
-
-/* =========================================================
-   MENSAJE DESPUÉS DE RESPONDER
-========================================================= */
-
-.love-message{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:9998;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:30px;
-
-    background:#09050a;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:1s;
-}
-
-
-.love-message.show{
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-.love-message-content{
-
-    max-width:650px;
-}
-
-
-.love-message-heart{
-
-    font-size:55px;
-
-    margin-bottom:20px;
-
-    animation:
-        heartbeat 1.5s infinite;
-}
-
-
-.love-message h2{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    color:#ffd0df;
-
-    font-size:60px;
-
-    font-weight:400;
-
-    margin-bottom:20px;
-}
-
-
-.love-message p{
-
-    color:#ddc3ce;
-
-    line-height:1.9;
-
-    font-size:16px;
-}
-
-
-/* =========================================================
-   FONDO GENERAL
-========================================================= */
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(160,55,100,.18),
-            transparent 40%
-        ),
-
-        linear-gradient(
-            to bottom,
-            #120812,
-            #09050a 60%,
-            #050305
-        );
-
-    z-index:-5;
-}
-
-
-/* =========================================================
-   NAVEGACIÓN
-========================================================= */
-
-nav{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    padding:15px 10px;
-
-    background:
-        rgba(10,4,10,.72);
-
-    backdrop-filter:
-        blur(10px);
-
-    border-bottom:
-        1px solid
-        rgba(255,170,200,.12);
-}
-
-
-.nav-container{
-
-    max-width:900px;
-
-    margin:auto;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:22px;
-
-    flex-wrap:wrap;
-}
-
-
-nav a{
-
-    color:#ffd9e8;
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    transition:.3s;
-}
-
-
-nav a:hover{
-
-    color:white;
-
-    text-shadow:
-        0 0 10px
-        #ff8bb5;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-
-    min-height:100vh;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:
-        100px 20px 50px;
-
-    overflow:hidden;
-}
-
-
-/* =========================================================
-   LUNA
-========================================================= */
-
-.moon{
-
-    position:absolute;
-
-    width:100px;
-
-    height:100px;
-
-    border-radius:50%;
-
-    background:#fff2d7;
-
-    box-shadow:
-
-        0 0 25px
-        rgba(255,230,180,.65),
-
-        0 0 70px
-        rgba(255,190,170,.22);
-
-    top:14%;
-
-    right:12%;
-
-    opacity:.9;
-}
-
-
-/* =========================================================
-   VENTANA
-========================================================= */
-
-.window{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    width:92%;
-
-    max-width:750px;
-
-    height:60%;
-
-    border:
-        8px solid
-        #241722;
-
-    background:
-
-        linear-gradient(
-            to top,
-            #140d1a 0%,
-            #30182c 35%,
-            #7a3157 67%,
-            #d9788b 100%
-        );
-
-    box-shadow:
-
-        inset 0 0 50px
-        rgba(0,0,0,.7),
-
-        0 0 30px
-        rgba(0,0,0,.6);
-
-    z-index:-2;
-}
-
-
-.window::before,
-.window::after{
-
-    content:"";
-
-    position:absolute;
-
-    background:#211522;
-}
-
-
-.window::before{
-
-    width:7px;
-
-    height:100%;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.window::after{
-
-    width:100%;
-
-    height:7px;
-
-    top:52%;
-}
-
-
-/* =========================================================
-   CIUDAD
-========================================================= */
-
-.city{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:0;
-
-    width:100%;
-
-    height:35%;
-
-    background:
-
-        linear-gradient(
-            to top,
-            #080609 0 15%,
-            transparent 16%
-        ),
-
-        repeating-linear-gradient(
-            90deg,
-            #100b12 0px,
-            #100b12 30px,
-            #080609 30px,
-            #080609 50px
-        );
-
-    opacity:.85;
-}
-
-
-.city::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:25% 0 0;
-
-    background:
-
-        radial-gradient(
-            circle,
-            #ffbf70 1px,
-            transparent 2px
-        )
-        10px 10px/55px 35px,
-
-        radial-gradient(
-            circle,
-            #ffd98c 1px,
-            transparent 2px
-        )
-        30px 20px/70px 45px;
-
-    opacity:.65;
-}
-
-
-/* =========================================================
-   HERO TEXTO
-========================================================= */
-
-.hero-content{
-
-    position:relative;
-
-    z-index:5;
-
-    max-width:800px;
-}
-
-
-.small-title{
-
-    color:#ffc2d9;
-
-    letter-spacing:4px;
-
-    font-size:14px;
-
-    margin-bottom:20px;
-
-    text-transform:uppercase;
-}
-
-
-h1{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:
-        clamp(
-            55px,
-            12vw,
-            105px
-        );
-
-    font-weight:400;
-
-    color:#ffd4e3;
-
-    text-shadow:
-
-        0 0 10px
-        rgba(255,130,170,.7),
-
-        0 0 30px
-        rgba(255,80,140,.3);
-
-    line-height:1;
-}
-
-
-.subtitle{
-
-    margin-top:25px;
-
-    font-size:17px;
-
-    color:#f7dce6;
-}
-
-
-/* =========================================================
-   SECCIONES
-========================================================= */
-
-section{
-
-    padding:
-        90px 20px;
-
-    max-width:1000px;
-
-    margin:auto;
-}
-
-
-.section-title{
-
-    text-align:center;
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:52px;
-
-    color:#ffc6da;
-
-    margin-bottom:20px;
-}
-
-
-.section-subtitle{
-
-    text-align:center;
-
-    color:#d9bdc9;
-
-    max-width:700px;
-
-    margin:
-        0 auto 45px;
-
-    line-height:1.8;
-}
-
-
-/* =========================================================
-   PEQUEÑO DETALLE
-========================================================= */
-
-.detail-box{
-
-    max-width:800px;
-
-    margin:auto;
-
-    padding:
-        35px 28px;
-
-    border-radius:25px;
-
-    background:
-        rgba(38,16,30,.72);
-
-    border:
-        1px solid
-        rgba(255,150,190,.18);
-
-    box-shadow:
-
-        0 15px 50px
-        rgba(0,0,0,.4),
-
-        inset 0 0 30px
-        rgba(255,100,150,.03);
-
-    text-align:center;
-}
-
-
-.detail-box p{
-
-    color:#f4dce5;
-
-    line-height:1.9;
-
-    font-size:16px;
-}
-
-
-/* =========================================================
-   TARJETAS
-========================================================= */
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:25px;
-}
-
-
-.card{
-
-    background:
-        rgba(31,13,25,.88);
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        rgba(255,150,190,.18);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.45);
-
-    transition:.4s;
-}
-
-
-.card:hover{
-
-    transform:
-        translateY(-8px);
-
-    box-shadow:
-
-        0 20px 50px
-        rgba(0,0,0,.55),
-
-        0 0 25px
-        rgba(255,90,150,.12);
-}
-
-
-.card-image{
-
-    width:100%;
-
-    height:230px;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-
-.card-content{
-
-    padding:
-        25px 20px 28px;
-
-    text-align:center;
-}
-
-
-.card h3{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    color:#ffd0df;
-
-    font-size:34px;
-
-    font-weight:400;
-
-    margin-bottom:10px;
-}
-
-
-.card p{
-
-    color:#cdbbc4;
-
-    font-size:13px;
-
-    line-height:1.6;
-
-    margin-bottom:20px;
-}
-
-
-.card-button{
-
-    border:none;
-
-    background:#9f4269;
-
-    color:white;
-
-    padding:
-        11px 20px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-family:
-        'Playfair Display',
-        serif;
-
-    transition:.3s;
-}
-
-
-.card-button:hover{
-
-    background:#c95d86;
-
-    transform:
-        scale(1.04);
-}
-
-
-/* =========================================================
-   MODAL CARTA
-========================================================= */
-
-.modal{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-        rgba(5,2,6,.88);
-
-    backdrop-filter:
-        blur(8px);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-    z-index:2000;
-}
-
-
-.modal.active{
-
-    display:flex;
-}
-
-
-.envelope-wrapper{
-
-    width:100%;
-
-    max-width:650px;
-
-    perspective:1000px;
-}
-
-
-.envelope{
-
-    background:#ead5dc;
-
-    color:#301521;
-
-    border-radius:12px;
-
-    padding:
-        35px 28px;
-
-    position:relative;
-
-    box-shadow:
-
-        0 30px 80px
-        rgba(0,0,0,.7),
-
-        0 0 30px
-        rgba(255,120,160,.15);
-
-    animation:
-        letterIn .7s ease;
-}
-
-
-@keyframes letterIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(40px)
-            scale(.9)
-            rotateX(10deg);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1)
-            rotateX(0);
-    }
-}
-
-
-.envelope::before{
-
-    content:"♥";
-
-    position:absolute;
-
-    top:-22px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    width:44px;
-
-    height:44px;
-
-    border-radius:50%;
-
-    background:#a9436b;
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:20px;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,0,0,.3);
-}
-
-
-.envelope h2{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    text-align:center;
-
-    color:#96385f;
-
-    font-size:42px;
-
-    font-weight:400;
-
-    margin-bottom:20px;
-}
-
-
-.letter-text{
-
-    color:#432b35;
-
-    line-height:1.9;
-
-    font-size:15px;
-
-    white-space:pre-line;
-
-    text-align:left;
-
-    max-height:55vh;
-
-    overflow-y:auto;
-
-    padding-right:8px;
-}
-
-
-.close-button{
-
-    display:block;
-
-    margin:
-        25px auto 0;
-
-    border:none;
-
-    background:#91375d;
-
-    color:white;
-
-    padding:
-        10px 24px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-family:
-        'Playfair Display',
-        serif;
-}
-
-
-/* =========================================================
-   ÚLTIMA SORPRESA / CANCIÓN
-========================================================= */
-
-.song-section{
-
-    min-height:70vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-
-.song-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(190,65,110,.18),
-            transparent 55%
-        );
-
-    pointer-events:none;
-}
-
-
-.song-content{
-
-    position:relative;
-
-    max-width:750px;
-
-    padding:20px;
-}
-
-
-.song-small{
-
-    color:#d79caf;
-
-    letter-spacing:4px;
-
-    font-size:12px;
-
-    text-transform:uppercase;
-
-    margin-bottom:20px;
-}
-
-
-.song-title{
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:
-        clamp(
-            48px,
-            10vw,
-            75px
-        );
-
-    color:#ffd0df;
-
-    font-weight:400;
-
+    font-size:clamp(40px,12vw,75px);
+    color:#ffb3d9;
+    text-shadow:0 0 25px rgba(255,100,180,.6);
+    font-style:italic;
     margin-bottom:25px;
 }
 
-
-.song-text{
-
-    color:#dbc4ce;
-
-    line-height:2;
-
-    font-size:15px;
-
-    margin-bottom:35px;
+.intro-question{
+    font-size:18px;
+    line-height:1.8;
+    color:#f6dce9;
+    margin-bottom:30px;
 }
 
+.intro-question strong{
+    font-size:30px;
+    color:#fff;
+}
 
-.song-button{
+.intro-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
+}
 
-    display:inline-block;
-
+.intro-buttons button{
+    width:min(300px,90%);
+    padding:16px 25px;
     border:none;
-
-    text-decoration:none;
-
-    padding:
-        15px 28px;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #96385f,
-            #e36b96
-        );
-
+    border-radius:30px;
+    background:linear-gradient(135deg,#ff72b6,#b92c76);
     color:white;
-
-    font-family:
-        'Playfair Display',
-        serif;
-
-    font-size:15px;
-
+    font-size:17px;
+    font-weight:bold;
     cursor:pointer;
-
-    box-shadow:
-
-        0 10px 30px
-        rgba(0,0,0,.45),
-
-        0 0 25px
-        rgba(230,80,140,.2);
-
+    box-shadow:0 8px 25px rgba(255,50,150,.3);
     transition:.3s;
 }
 
+.intro-buttons button:hover{
+    transform:scale(1.05);
+}
+
+/* TRANSICIÓN */
+#transition{
+    position:fixed;
+    inset:0;
+    z-index:9998;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+    background:#09070b;
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+
+.transition-box{
+    max-width:650px;
+}
+
+.transition-box h2{
+    color:#ff9dce;
+    font-size:clamp(35px,10vw,60px);
+    margin-bottom:25px;
+    font-style:italic;
+}
+
+.transition-box p{
+    color:#f7dce9;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* CONTENIDO */
+#main-content{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+
+header{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+    background:
+        linear-gradient(rgba(10,5,10,.2),rgba(10,5,10,.85)),
+        radial-gradient(circle at 70% 25%,#702b55 0%,transparent 25%),
+        linear-gradient(180deg,#271326 0%,#140b17 55%,#08070b 100%);
+}
+
+/* Luna */
+.moon{
+    position:absolute;
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:#ffe8ee;
+    right:13%;
+    top:13%;
+    box-shadow:0 0 45px rgba(255,220,235,.55);
+}
+
+/* Ciudad */
+.city{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:30%;
+    background:
+        linear-gradient(to top,#050408 0%,transparent 100%);
+}
+
+.building{
+    position:absolute;
+    bottom:0;
+    background:#09080d;
+}
+
+.b1{left:0;width:14%;height:75%}
+.b2{left:12%;width:18%;height:48%}
+.b3{left:29%;width:13%;height:82%}
+.b4{left:41%;width:17%;height:57%}
+.b5{left:55%;width:14%;height:73%}
+.b6{left:68%;width:20%;height:50%}
+.b7{left:86%;width:14%;height:76%}
+
+.hero-content{
+    position:relative;
+    z-index:3;
+    max-width:850px;
+}
+
+.hero-small{
+    color:#e99bc1;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero-title{
+    font-size:clamp(45px,11vw,90px);
+    line-height:1;
+    color:#ffd0e6;
+    font-style:italic;
+    text-shadow:
+        0 0 10px rgba(255,150,200,.4),
+        0 0 35px rgba(255,80,160,.25);
+}
+
+.hero-subtitle{
+    margin-top:25px;
+    color:#f1d7e3;
+    font-size:18px;
+}
+
+/* NAVEGACIÓN */
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,7,11,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,150,200,.12);
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    padding:12px;
+    overflow-x:auto;
+}
+
+nav a{
+    color:#f3c8da;
+    text-decoration:none;
+    white-space:nowrap;
+    padding:9px 13px;
+    border-radius:20px;
+    font-size:13px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#8e315e;
+    color:white;
+}
+
+/* SECCIONES */
+section{
+    padding:80px 20px;
+}
+
+.container{
+    width:min(1050px,100%);
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:clamp(32px,8vw,55px);
+    color:#ffafd3;
+    font-style:italic;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#cda8b9;
+    margin-bottom:45px;
+}
+
+/* DETALLE */
+.detail{
+    text-align:center;
+}
+
+.detail-box{
+    max-width:800px;
+    margin:auto;
+    padding:35px 25px;
+    border:1px solid rgba(255,160,200,.18);
+    border-radius:25px;
+    background:rgba(255,255,255,.025);
+    box-shadow:0 15px 50px rgba(0,0,0,.3);
+}
+
+.detail-box p{
+    color:#f0dce5;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* TARJETAS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,150,200,.15);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,150,200,.4);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:25px;
+    text-align:center;
+}
+
+.card-content h3{
+    color:#ffb1d4;
+    font-size:26px;
+    margin-bottom:15px;
+    font-style:italic;
+}
+
+.card-content p{
+    color:#cdb8c3;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.card-button{
+    border:none;
+    padding:13px 24px;
+    border-radius:25px;
+    color:white;
+    background:linear-gradient(135deg,#b92d76,#7e2453);
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.card-button:hover{
+    transform:scale(1.05);
+}
+
+/* CANCIÓN */
+.song-section{
+    text-align:center;
+    padding-bottom:100px;
+}
+
+.song-box{
+    max-width:700px;
+    margin:auto;
+    padding:45px 25px;
+    border-radius:30px;
+    background:
+        radial-gradient(circle at top,rgba(180,40,110,.18),transparent 60%),
+        rgba(255,255,255,.025);
+    border:1px solid rgba(255,160,200,.18);
+}
+
+.song-small{
+    color:#d58aaa;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.song-box h2{
+    color:#ffb1d4;
+    font-size:clamp(32px,8vw,55px);
+    font-style:italic;
+    margin-bottom:25px;
+}
+
+.song-box p{
+    color:#ead8e0;
+    line-height:1.9;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.song-button{
+    display:inline-block;
+    text-decoration:none;
+    background:linear-gradient(135deg,#ff72b6,#a9296c);
+    color:white;
+    padding:16px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 10px 30px rgba(255,50,150,.25);
+    transition:.3s;
+}
 
 .song-button:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
+    transform:scale(1.05);
 }
-
 
 .song-note{
-
     margin-top:18px;
-
-    color:#927583;
-
-    font-size:11px;
+    color:#aa8c9c;
+    font-size:13px;
 }
 
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#9f8491;
+    border-top:1px solid rgba(255,255,255,.05);
+}
 
-/* =========================================================
-   CORAZONES
-========================================================= */
-
-.heart{
-
+/* MODAL */
+.modal{
     position:fixed;
-
-    top:-30px;
-
-    color:#ff91b8;
-
-    font-size:18px;
-
-    pointer-events:none;
-
-    z-index:10;
-
-    animation:
-        fall linear forwards;
+    inset:0;
+    z-index:1000;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
+.modal.active{
+    display:flex;
+}
+
+.envelope{
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow-y:auto;
+    background:
+        linear-gradient(145deg,#24131d,#130b10);
+    border:1px solid rgba(255,160,200,.3);
+    border-radius:25px;
+    padding:40px 28px;
+    box-shadow:0 30px 100px rgba(0,0,0,.7);
+    animation:envelopeIn .6s ease;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:14px;
+    background:none;
+    border:none;
+    color:#e7b5ca;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.envelope h2{
+    color:#ffafd3;
+    font-style:italic;
+    font-size:35px;
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.letter{
+    color:#f1dce5;
+    line-height:1.9;
+    font-size:17px;
+    white-space:pre-line;
+}
+
+.signature{
+    text-align:right;
+    color:#ffafd3;
+    margin-top:25px;
+    font-style:italic;
+    font-size:20px;
+}
+
+/* CORAZONES */
+.heart{
+    position:fixed;
+    top:-20px;
+    z-index:5;
+    pointer-events:none;
+    animation:fall linear forwards;
+    opacity:.75;
+}
 
 @keyframes fall{
-
     to{
-
-        transform:
-            translateY(110vh)
-            rotate(360deg);
-
+        transform:translateY(110vh) rotate(360deg);
         opacity:0;
     }
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-
-    text-align:center;
-
-    padding:
-        60px 20px;
-
-    color:#947987;
-
-    font-size:12px;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-
-.footer-heart{
-
-    color:#e86693;
-
-    font-size:20px;
+@keyframes envelopeIn{
+    from{
+        opacity:0;
+        transform:scale(.85) translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
+/* MÓVIL */
 @media(max-width:800px){
-
     .cards{
-
         grid-template-columns:1fr;
-
         max-width:500px;
-
         margin:auto;
     }
 
-
-    .card-image{
-
-        height:250px;
+    .card img{
+        height:240px;
     }
 
-
-    .window{
-
-        width:95%;
-
-        height:55%;
+    nav{
+        justify-content:flex-start;
     }
-
 
     .moon{
-
-        width:70px;
-
-        height:70px;
-
-        right:8%;
+        width:80px;
+        height:80px;
+        right:10%;
+        top:10%;
     }
-
-
-    .nav-container{
-
-        gap:12px;
-    }
-
-
-    nav a{
-
-        font-size:11px;
-    }
-
-
-    section{
-
-        padding:
-            75px 18px;
-    }
-
-
-    .section-title{
-
-        font-size:45px;
-    }
-
 }
-
-
-@media(max-width:430px){
-
-    .intro-title{
-
-        font-size:58px;
-    }
-
-
-    .intro-question{
-
-        font-size:16px;
-    }
-
-
-    .answer-button{
-
-        width:100%;
-
-        max-width:260px;
-    }
-
-
-    h1{
-
-        font-size:60px;
-    }
-
-
-    .subtitle{
-
-        font-size:15px;
-    }
-
-
-    .detail-box{
-
-        padding:
-            27px 20px;
-    }
-
-
-    .detail-box p{
-
-        font-size:14px;
-    }
-
-
-    .card-image{
-
-        height:220px;
-    }
-
-
-    .envelope{
-
-        padding:
-            30px 20px;
-    }
-
-
-    .envelope h2{
-
-        font-size:36px;
-    }
-
-
-    .letter-text{
-
-        font-size:14px;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ======================================================
-     PANTALLA INICIAL
-====================================================== -->
-
-<div
-    class="intro-screen"
-    id="introScreen"
->
-
-
-    <div class="intro-content">
-
-
-        <div class="intro-heart">
-
-            ♥️
-
-        </div>
-
-
-        <h1 class="intro-title">
-
-            Jolly...
-
-        </h1>
-
+<!-- INTRO -->
+<div id="intro">
+    <div class="intro-box">
+        <h1 class="intro-title">Jolly...</h1>
 
         <p class="intro-question">
-
-            Antes de comenzar hay algo
-            que quiero preguntarte...
-
+            Antes de comenzar hay algo que quiero preguntarte...
             <br><br>
-
-            <strong>
-                ¿Me amas? ❤️
-            </strong>
-
+            <strong>¿Me amas? ❤️</strong>
         </p>
 
-
-        <div class="answer-buttons">
-
-
-            <button
-                class="answer-button"
-                onclick="startExperience()"
-            >
-
-                Sí ❤️
-
-            </button>
-
-
-            <button
-                class="answer-button"
-                onclick="startExperience()"
-            >
-
-                Sí, muchísimo ❤️
-
-            </button>
-
-
+        <div class="intro-buttons">
+            <button onclick="startExperience()">Sí ❤️</button>
+            <button onclick="startExperience()">Sí, muchísimo ❤️</button>
         </div>
-
     </div>
-
 </div>
 
-
-
-<!-- ======================================================
-     MENSAJE DE TRANSICIÓN
-====================================================== -->
-
-<div
-    class="love-message"
-    id="loveMessage"
->
-
-
-    <div class="love-message-content">
-
-
-        <div class="love-message-heart">
-
-            ❤️
-
-        </div>
-
-
-        <h2>
-
-            Lo sabía...
-
-        </h2>
-
+<!-- TRANSICIÓN -->
+<div id="transition">
+    <div class="transition-box">
+        <h2>Lo sabía...</h2>
 
         <p>
-
-            Entonces ahora sí...
-            quiero enseñarte algo que hice
-            pensando solamente en ti.
-
+            Entonces ahora sí... quiero enseñarte algo que hice pensando solamente en ti.
             <br><br>
-
             Espero que te guste, mi Jolly. 🖤❤️
-
         </p>
-
     </div>
-
 </div>
 
+<!-- CONTENIDO PRINCIPAL -->
+<div id="main-content">
 
-
-<!-- ======================================================
-     NAVEGACIÓN
-====================================================== -->
-
-<nav>
-
-    <div class="nav-container">
-
-
-        <a href="#inicio">
-            Inicio
-        </a>
-
-
-        <a href="#detalle">
-            Lo que amo de ti
-        </a>
-
-
-        <a href="#amor">
-            Una promesa
-        </a>
-
-
-        <a href="#sorpresa">
-            Una última sorpresa
-        </a>
-
-
-        <a href="#cancion">
-            Nuestra canción
-        </a>
-
-
-    </div>
-
-</nav>
-
-
-
-<!-- ======================================================
-     HERO
-====================================================== -->
-
-<header
-    class="hero"
-    id="inicio"
->
-
-
-    <div class="window">
-
-        <div class="city"></div>
-
-    </div>
-
+<header id="inicio">
 
     <div class="moon"></div>
 
+    <div class="city">
+        <div class="building b1"></div>
+        <div class="building b2"></div>
+        <div class="building b3"></div>
+        <div class="building b4"></div>
+        <div class="building b5"></div>
+        <div class="building b6"></div>
+        <div class="building b7"></div>
+    </div>
 
     <div class="hero-content">
 
-
-        <div class="small-title">
-
+        <div class="hero-small">
             Para la persona que más amo
-
         </div>
 
-
-        <h1>
-
+        <h1 class="hero-title">
             Feliz cumpleaños<br>
-
             Mi Princesa Jolly
-
         </h1>
 
-
-        <p class="subtitle">
-
-            Hoy quería hacer algo especial
-            solamente para ti 🖤❤️
-
+        <p class="hero-subtitle">
+            Hoy quería hacer algo especial solamente para ti 🖤❤️
         </p>
 
-
     </div>
-
 </header>
 
-
-
-<!-- ======================================================
-     PEQUEÑO DETALLE
-====================================================== -->
-
-<section id="detalle">
-
-
-    <h2 class="section-title">
-
-        Un pequeño detalle...
-
-    </h2>
-
-
-    <div class="detail-box">
-
-
-        <p>
-
-            No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz , hoy como es tu cumpleaños espero que la pases bonito amor mío , TE AMO 🖤❤️
-
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- ======================================================
-     CARTAS
-====================================================== -->
-
-<section id="amor">
-
-
-    <h2 class="section-title">
-
-        Unas palabras para ti
-
-    </h2>
-
-
-    <p class="section-subtitle">
-
-        Hay cosas que a veces es difícil decirlas..
-        así que decidí guardarlas aquí para que puedas leerlas cuando quieras. 🖤
-
-    </p>
-
-
-    <div class="cards">
-
-
-        <!-- CARTA 1 -->
-
-        <div class="card">
-
-
-            <img
-                src="lo-que-amo.jpg"
-                alt="Lo que amo de ti"
-                class="card-image"
-            >
-
-
-            <div class="card-content">
-
-
-                <h3>
-
-                    Lo que amo de ti
-
-                </h3>
-
-
-                <p>
-
-                    Porque hay tantas cosas de ti
-                    que hacen que te ame cada día más...
-
-                </p>
-
-
-                <button
-                    class="card-button"
-                    onclick="openLetter(0)"
-                >
-
-                    💌 Abrir carta
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- CARTA 2 -->
-
-        <div class="card">
-
-
-            <img
-                src="una-promesa.jpg"
-                alt="Una promesa"
-                class="card-image"
-            >
-
-
-            <div class="card-content">
-
-
-                <h3>
-
-                    Una promesa
-
-                </h3>
-
-
-                <p>
-
-                    Una promesa que nace
-                    de todo lo que siento por ti.
-
-                </p>
-
-
-                <button
-                    class="card-button"
-                    onclick="openLetter(1)"
-                >
-
-                    💌 Abrir carta
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- CARTA 3 -->
-
-        <div
-            class="card"
-            id="sorpresa"
-        >
-
-
-            <img
-                src="ultima-sorpresa.jpg"
-                alt="Una última sorpresa"
-                class="card-image"
-            >
-
-
-            <div class="card-content">
-
-
-                <h3>
-
-                    Una última sorpresa
-
-                </h3>
-
-
-                <p>
-
-                    Algo pequeño que hice
-                    pensando únicamente en ti.
-
-                </p>
-
-
-                <button
-                    class="card-button"
-                    onclick="openLetter(2)"
-                >
-
-                    💌 Abrir carta
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ======================================================
-     SECCIÓN FINAL DE LA CANCIÓN
-====================================================== -->
-
-<section
-    class="song-section"
-    id="cancion"
->
-
-
-    <div class="song-content">
-
-
-        <div class="song-small">
-
-            Y ahora sí...
-
-        </div>
-
-
-        <h2 class="song-title">
-
-            Una última canción para ti
-
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#lo-que-amo">Lo que amo de ti</a>
+    <a href="#promesa">Una promesa</a>
+    <a href="#sorpresa">Una última sorpresa</a>
+    <a href="#cancion">Nuestra canción</a>
+</nav>
+
+<!-- DETALLE -->
+<section class="detail">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Un pequeño detalle...
         </h2>
 
+        <div class="detail-box">
 
-        <p class="song-text">
-
-            Llegaste hasta el final... ❤️
-
-            <br><br>
-
-            Pero todavía me faltaba regalarte algo.
-
-            <br>
-
-            Esta canción como dijiste es de nosotros,
-            y quiero que la escuches mientras
-            recuerdas todo lo que te escribí.
-
-            <br><br>
-
-            Feliz Cumpleaños,
-            Mi Jolly.
-
-            <br>
-
-            Te amo muchísimo. 🖤❤️
-
-        </p>
-
-
-        <a
-            class="song-button"
-            href="https://www.youtube.com/watch?v=22snn05aEyQ"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            🎵 Escuchar nuestra canción
-
-        </a>
-
-
-        <div class="song-note">
-
-            「貴方の側に。」 — りりあ。<br>
-            Opening de Mi feliz matrimonio
+            <p>
+                No importan cuántos días pasen yo te seguiré amando incluso más que ayer y siempre encontrare la manera de poder verte feliz , hoy como es tu cumpleaños espero que la pases bonito amor mío , TE AMO 🖤❤️
+            </p>
 
         </div>
 
@@ -1986,345 +642,306 @@ footer{
 
 </section>
 
+<!-- CARTAS -->
+<section id="lo-que-amo">
 
+    <div class="container">
 
-<!-- ======================================================
-     MODAL CARTAS
-====================================================== -->
+        <h2 class="section-title">
+            Cosas que quiero decirte
+        </h2>
 
+        <p class="section-subtitle">
+            Hay cosas que a veces es difícil decirlas... así que decidí escribirlas para ti.
+        </p>
+
+        <div class="cards">
+
+            <!-- LO QUE AMO -->
+            <div class="card">
+
+                <img src="lo-que-amo.jpg" alt="Lo que amo de ti">
+
+                <div class="card-content">
+
+                    <h3>Lo que amo de ti</h3>
+
+                    <p>
+                        Porque hay tantas cosas de ti que hacen que te ame cada día más...
+                    </p>
+
+                    <button
+                        class="card-button"
+                        onclick="openLetter('love')">
+                        Abrir mi carta ❤️
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- PROMESA -->
+            <div class="card" id="promesa">
+
+                <img src="una-promesa.jpg" alt="Una promesa">
+
+                <div class="card-content">
+
+                    <h3>Una promesa</h3>
+
+                    <p>
+                        Una promesa que nace de todo lo que siento por ti.
+                    </p>
+
+                    <button
+                        class="card-button"
+                        onclick="openLetter('promise')">
+                        Abrir mi carta 💍
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- SORPRESA -->
+            <div class="card" id="sorpresa">
+
+                <img src="ultima-sorpresa.jpg" alt="Una última sorpresa">
+
+                <div class="card-content">
+
+                    <h3>Una última sorpresa</h3>
+
+                    <p>
+                        Algo pequeño que hice pensando únicamente en ti.
+                    </p>
+
+                    <button
+                        class="card-button"
+                        onclick="openLetter('surprise')">
+                        Abrir mi carta 💌
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CANCIÓN -->
+<section id="cancion" class="song-section">
+
+    <div class="container">
+
+        <div class="song-box">
+
+            <div class="song-small">
+                Y ahora sí...
+            </div>
+
+            <h2>
+                Una última canción para ti
+            </h2>
+
+            <p>
+                Llegaste hasta el final... ❤️
+                <br><br>
+
+                Pero todavía me faltaba regalarte algo.
+                <br><br>
+
+                Esta canción me hace pensar en ti, así que quiero que la escuches mientras recuerdas todo lo que te escribí.
+                <br><br>
+
+                Feliz cumpleaños, mi Jolly.
+                <br><br>
+
+                Te amo muchísimo. 🖤❤️
+            </p>
+
+            <a
+                class="song-button"
+                href="https://www.youtube.com/watch?v=22snn05aEyQ"
+                target="_blank">
+                🎵 Escuchar nuestra canción
+            </a>
+
+            <div class="song-note">
+                「貴方の側に。」 — りりあ。<br>
+                Opening de Mi feliz matrimonio
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    Hecho con todo mi amor para Jolly 🖤❤️
+</footer>
+
+</div>
+
+<!-- MODAL -->
 <div
     class="modal"
     id="letterModal"
-    onclick="closeLetterOutside(event)"
->
+    onclick="closeLetterOutside(event)">
 
+    <div class="envelope">
 
-    <div class="envelope-wrapper">
+        <button
+            class="close"
+            onclick="closeLetter()">
+            ×
+        </button>
 
+        <h2 id="letterTitle"></h2>
 
-        <div class="envelope">
+        <div
+            class="letter"
+            id="letterText">
+        </div>
 
-
-            <h2 id="letterTitle">
-
-                Para ti...
-
-            </h2>
-
-
-            <div
-                class="letter-text"
-                id="letterText"
-            ></div>
-
-
-            <button
-                class="close-button"
-                onclick="closeLetter()"
-            >
-
-                Cerrar carta ❤️
-
-            </button>
-
-
+        <div class="signature">
+            Con todo mi amor,<br>
+            para ti Jolly 🖤❤️
         </div>
 
     </div>
 
 </div>
 
-
-
-<!-- ======================================================
-     FOOTER
-====================================================== -->
-
-<footer>
-
-
-    <div class="footer-heart">
-
-        ♥
-
-    </div>
-
-
-    Hecho con mucho amor para Mi Jolly
-
-
-    <br>
-    <br>
-
-
-    Siempre podrás volver aquí
-    cuando quieras. 🖤❤️
-
-</footer>
-
-
-
 <script>
 
+/* CARTAS */
+const letters = {
 
-/* =========================================================
-   INICIAR EXPERIENCIA
-========================================================= */
+    love: {
+        title:"Lo que amo de ti ❤️",
 
+        text:`Amo tu sonrisa , amo como eres conmigo , amo tu voz , amo tu figura, amo tus ojos , amo tus labios , amo todo de ti jolly, pero lo que más amo es que me as demostrado que eres una mujer única y especial , que tienes un bello corazón, que suerte tenerte en mi vida , por eso mucho más puedo decirte que te amo jolly 🖤❤️`
+    },
+
+    promise: {
+        title:"Una promesa 💍",
+
+        text:`Te prometo que siempre estaré a tu lado no pienso dejarte sola nunca más , si me lo permites, siempre estaré para ti tu eres mi prioridad número uno cuando te sientas sola o quieres hablar con alguien puedes hacerlo conmigo amor, te amo mucho 🖤🖤🖤🖤`
+    },
+
+    surprise: {
+        title:"Una última sorpresa 💌",
+
+        text:`Se que no puedo darte nada físicamente, aunque me encantaría hacerlo llevarte a comer , salir contigo a cualquier sitio , poder abrazarte, pero no pienses que esa distancia haga que deje de amarte , no , siempre te amare y pronto esa distancia puede romperse yo te amo ATI más que a nada jolly, mi corazón te pertenece, puedes confiar en mi amada jolly, siempre te amare y llegará el día en que si sale todo bien nos casemos y felices juntitos volveremos , te amo jolly y demasiado, espero pases un feliz cumpleaños amor muaaaa.`
+    }
+
+};
+
+
+/* INICIAR EXPERIENCIA */
 function startExperience(){
 
+    const intro = document.getElementById("intro");
+    const transition = document.getElementById("transition");
+    const main = document.getElementById("main-content");
 
-    const intro =
-        document.getElementById(
-            "introScreen"
-        );
+    intro.style.opacity = "0";
+    intro.style.visibility = "hidden";
 
+    setTimeout(() => {
 
-    const message =
-        document.getElementById(
-            "loveMessage"
-        );
+        transition.style.opacity = "1";
+        transition.style.visibility = "visible";
 
+    },500);
 
-    /*
-       Primero ocultamos la pregunta
-    */
+    setTimeout(() => {
 
-    intro.classList.add("hidden");
+        transition.style.opacity = "0";
+        transition.style.visibility = "hidden";
 
-
-    /*
-       Mostramos el mensaje romántico
-    */
-
-    setTimeout(function(){
-
-        message.classList.add("show");
-
-    },700);
-
-
-    /*
-       Después desaparece el mensaje
-       y aparece la página.
-    */
-
-    setTimeout(function(){
-
-        message.classList.remove("show");
+        main.style.opacity = "1";
 
     },3000);
 
 }
 
 
+/* ABRIR CARTA */
+function openLetter(type){
 
-/* =========================================================
-   CARTAS
-========================================================= */
+    const modal = document.getElementById("letterModal");
 
-const letters = [
+    document.getElementById("letterTitle").textContent =
+        letters[type].title;
 
+    document.getElementById("letterText").textContent =
+        letters[type].text;
 
-    {
+    modal.classList.add("active");
 
-        title:"Lo que amo de ti",
-
-        text:
-`Tu sabes que me gusta todo de ti , tu sonaría , como ries , tu voz , tu hermosura, tu personalidad todo de ti me tiene loco de amor , aunque me digas que eres un caos jolly, tu sabes que no eres eso , tu eres una mujer muy buena de corazón y por eso te amo , y me gusta todo eso de ti , nunca te dejare sola jolly siempre puedes contar conmigo🖤❤️`
-
-    },
-
-
-    {
-
-        title:"Una promesa",
-
-        text:
-`Prometo siempre quedarme a tu lado nunca más me volveré a alejar de ti , si me lo permites siempre estaré para ti amor SIEMPRE , porque te amo con todo mi corazón como no tienes idea , prometo que si todo sale bien , llegará el día que en verdad nos podamos conocer en persona , Te amo jolly 🖤❤️`
-
-    },
-
-
-    {
-
-        title:"Una última sorpresa",
-
-        text:
-`jolly tu sabes que te amo mucho , tal vez no pueda darte nada en físico por ahora pero creeme que me gustaría llevarte un ramo de flores que tanto te gusta, si seguimos bien esa distancia se puede romper.
-
- y llegaria el dia en que si pueda abrazarte como se debe amor , te amo jolly , feliz cumpleaños mi princesa, nunca olvides que eres la dueña de mi corazón 🖤❤️`
-
-    }
-
-];
-
-
-
-/* =========================================================
-   ABRIR CARTA
-========================================================= */
-
-function openLetter(index){
-
-
-    document.getElementById(
-        "letterTitle"
-    ).textContent =
-        letters[index].title;
-
-
-    document.getElementById(
-        "letterText"
-    ).textContent =
-        letters[index].text;
-
-
-    document
-        .getElementById(
-            "letterModal"
-        )
-        .classList.add("active");
-
-
-    document.body.style.overflow =
-        "hidden";
-
+    document.body.style.overflow = "hidden";
 }
 
 
-
-/* =========================================================
-   CERRAR CARTA
-========================================================= */
-
+/* CERRAR CARTA */
 function closeLetter(){
 
-
     document
-        .getElementById(
-            "letterModal"
-        )
+        .getElementById("letterModal")
         .classList.remove("active");
 
-
-    document.body.style.overflow =
-        "";
-
+    document.body.style.overflow = "";
 }
 
 
-
-/* =========================================================
-   CERRAR CARTA TOCANDO AFUERA
-========================================================= */
-
+/* CERRAR AL TOCAR AFUERA */
 function closeLetterOutside(event){
 
-
-    if(
-        event.target.id ===
-        "letterModal"
-    ){
-
+    if(event.target.id === "letterModal"){
         closeLetter();
-
     }
 
 }
 
 
-
-/* =========================================================
-   CORAZONES
-========================================================= */
-
+/* CORAZONES */
 function createHeart(){
 
+    const heart = document.createElement("div");
 
-    const heart =
-        document.createElement("div");
+    heart.className = "heart";
 
+    const hearts = ["❤️","🖤","💗","💕","💖"];
 
-    heart.className =
-        "heart";
-
-
-    heart.innerHTML =
-        Math.random() > .5
-        ? "♥"
-        : "❤";
-
+    heart.textContent =
+        hearts[Math.floor(Math.random()*hearts.length)];
 
     heart.style.left =
-        Math.random() * 100 + "vw";
-
+        Math.random()*100 + "vw";
 
     heart.style.fontSize =
-        (
-            12 +
-            Math.random() * 14
-        ) + "px";
-
+        (12 + Math.random()*15) + "px";
 
     heart.style.animationDuration =
-        (
-            5 +
-            Math.random() * 5
-        ) + "s";
+        (5 + Math.random()*5) + "s";
 
+    document.body.appendChild(heart);
 
-    heart.style.opacity =
-        .3 +
-        Math.random() * .6;
-
-
-    document.body.appendChild(
-        heart
-    );
-
-
-    setTimeout(
-        function(){
-
-            heart.remove();
-
-        },
-        10000
-    );
+    setTimeout(() => {
+        heart.remove();
+    },10000);
 
 }
 
-
-setInterval(
-    createHeart,
-    700
-);
-
-
-
-/* =========================================================
-   ESC PARA CERRAR CARTA
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.key === "Escape"
-        ){
-
-            closeLetter();
-
-        }
-
-    }
-);
+setInterval(createHeart,900);
 
 </script>
 
-
 </body>
-
 </html>
